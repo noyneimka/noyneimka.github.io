@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Отзывы</title>
+<link rel="stylesheet" href="/css/reviews.css" />
+</head>
+<body>
+<header>
+    <div class="logo-holder">
+        <a href="/index.html" id="logo-link">
+            <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
+        </a>
+        <h1>Отзывы</h1>
+    </div>
+</header> 
+<a href="index.html"><img src="https://i.ibb.co/k2M1GSJh/1.png" width="50" style="margin-top:80px"></a>
+<div class="container">
+        <!-- Раздел форма для добавления отзывов -->
+        <section style="margin-top: -100px;">
+            <div class="rectangle">
+                <!-- Заголовок -->
+                <h2 class="ztext">Добавить свой отзыв</h2>
+                <!-- Блок с загрузкой изображения -->
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <!-- Предпросмотр -->
+    <img id="previewImage" style="display:none; max-width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #ccc;" alt="Предпросмотр" />
+    <!-- Загрузка -->
+    <label for="image" class="upload-label" style="cursor:pointer;">
+        Выберите аватарку
+    </label>
+    <input type="file" id="image" accept="image/*" style="display: none;" />
+ </div>
+ <!-- Превью выбранного изображения -->
+<!-- Предпросмотр изображения -->
+<img id="previewImage" style="display:none; max-width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #ccc; margin-top: 10px;" alt="Предпросмотр" />
+
+<!-- Форма для отзывов -->
+<form id="reviewForm" style="position: relative;">
+    <input type="text" placeholder="Ваше имя" id="name" required />
+    <textarea placeholder="Напишите отзыв" id="message" rows="4" required></textarea>
+<div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+    <!-- Основная кнопка -->
+    <button type="submit" style="padding: 8px 16px; font-size: 14px; border-radius: 4px;">Добавить отзыв</button>
+    <!-- Маленькая такая же по размеру кнопка -->
+    <button id="smallGreenBtn" style="
+        position: absolute;
+        background-color: transparent;
+        border: none; 
+        cursor: pointer;
+        bottom: -35px;
+        right: 20px;
+        padding: 12px 25px;
+        border-radius: 8px;
+        border: none;
+       font-size: 16px;
+       transition: background-color 0.3s ease;"
+       onclick="window.location.href='reviiews.html'">
+    </button>
+</div>
+            </div>
+        </section>
+
+        <!-- Раздел отзывов -->
+        <section style="margin-top: 40px;">
+            <h2 class="ztext">Отзывы наших посетителей</h2>
+            <div class="reviews" id="reviewsContainer">
+                <!-- Примеры отзывов -->
+                <div class="review-card">
+    <img src="https://grizly.club/uploads/posts/2023-08/1693294873_grizly-club-p-kartinki-avatarki-dlya-ds-bez-fona-22.jpg" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Павел</div>
+        <div class="text">Пересказы очень точные и интересные, идеально для быстрого понимания книги.</div>
+    </div>
+</div>
+<div class="review-card">
+    <img src="https://avatars.mds.yandex.net/i?id=2c673f0a08e986644043783b9c3c20cc2e93ff34-12605172-images-thumbs&n=13" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Славения</div>
+        <div class="text">Спасибо за отличную работу! Очень помогло подготовиться к экзамену.</div>
+    </div>
+</div>
+<div class="review-card">
+    <img src="https://www.meme-arsenal.com/memes/c7f5e13fb0bd61da28f48d76b090f02a.jpg" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Дмитрий</div>
+        <div class="text">Классные пересказы, читаются на одном дыхании. Всем советую!</div>
+    </div>
+</div>
+<div class="review-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKD7xbj0jzkfHN0C_Uc9QbGhcIECsAHXNJxfP9f2QzrwOsnTD0oYeTp3L2Z0eKvZyEFek&usqp=CAU" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Елена</div>
+        <div class="text">Обожаю ваши обзоры! Очень удобно и интересно.</div>
+    </div>
+</div>
+<div class="review-card">
+    <img src="https://hdpic.club/uploads/posts/2022-01/1643004802_5-hdpic-club-p-na-avatarku-mashini-7.jpg" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Максим</div>
+        <div class="text">Отличный сервис! Спасибо за качественную работу.</div>
+    </div>
+</div>
+<div class="review-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJBywEsmaxMgGYP24mikmuF-CYEshnsvKTEAOErGWwXCTxqYsVuBjpPSvKU3TYs739d88&usqp=CAU" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Ольга</div>
+        <div class="text">Очень удобно читать короткие пересказы, экономлю время.</div>
+    </div>
+</div>
+<div class="review-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSL1FdTiLKLZJ7tCKeUt-j6ShhyNZHaDVAUw&s" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Андрей</div>
+        <div class="text">Обожаю ваши пересказы! Помогают мне учиться и расширять кругозор.</div>
+    </div>
+</div>
+<div class="review-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKD7xbj0jzkfHN0C_Uc9QbGhcIECsAHXNJxfP9f2QzrwOsnTD0oYeTp3L2Z0eKvZyEFek&usqp=CAU" alt="Отзыв" class="reviewer-avatar" />
+    <div class="review-content">
+        <div class="ytext">Наталья</div>
+        <div class="text">Очень понравилось, буду читать ещё и советовать друзьям!</div>
+    </div>
+</div>
+                <!-- Можно добавлять новые отзывы динамически -->
+            </div>   
+        </section>
+        <div style="margin-bottom: 100px;"> </div>  
+    </div>
+<footer>
+    <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="custom-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png" alt="Иконка" style="width: 30px; height: 30px; margin-right: 8px;" />
+        <span style="color: #fff;">Следить за нами</span>
+    </a>
+    <a class="custom-link" style="display: flex; align-items: center; cursor: pointer;">
+        <span id="phone" style="cursor: pointer; color: #fff; text-decoration: underline; line-height: 40px; margin-left: 20px;" onclick="copyToClipboard('8 800 555 35 55')">8 800 555 35 55</span>
+        <span style="color: #fff; margin-left: 8px; margin-top: 15px;">По вопросам</span>
+    </a>
+    <a class="custom-link" style="display: flex; align-items: center; cursor: pointer;">
+        <span id="email" style="cursor: pointer; color: #fff; text-decoration: underline; line-height: 40px; margin-left: 20px;" onclick="copyToClipboard('privet@gmail.com')">privet@gmail.com</span>
+        <span style="color: #fff; margin-left: 8px; margin-top: 15px;">По рекламме</span>
+    </a>
+    <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="custom-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Иконка" style="width: 30px; height: 30px; margin-right: 8px;" />
+        <span style="color: #fff;">Поддержать</span>
+    </a>
+</footer>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const imageInput = document.getElementById('image');
+            const container = document.getElementById('reviewsContainer');
+
+            let imgSrc = 'https://via.placeholder.com/80'; // стандартное изображение
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    createReview(e.target.result);
+                }
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                createReview(imgSrc);
+            }
+
+            function createReview(imgSrc) {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = 'review-card';
+
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = 'Отзывчик';
+                img.className = 'reviewer-avatar';
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'review-content';
+
+                const nameDiv = document.createElement('div');
+                nameDiv.className = 'ytext';
+                nameDiv.textContent = name;
+
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'text';
+                messageDiv.textContent = message;
+
+                contentDiv.appendChild(nameDiv);
+                contentDiv.appendChild(messageDiv);
+
+                reviewDiv.appendChild(img);
+                reviewDiv.appendChild(contentDiv);
+
+                container.appendChild(reviewDiv);
+
+                // Очистить форму после добавления
+                document.getElementById('reviewForm').reset();
+            }
+        });
+        const imageInput = document.getElementById('image');
+const previewImage = document.getElementById('previewImage');
+
+imageInput.addEventListener('change', function() {
+    if (this.files && this.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = 'block';
+        }
+        reader.readAsDataURL(this.files[0]);
+    } else {
+        previewImage.style.display = 'none';
+        previewImage.src = '';
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+body {  
+    margin: 0;  
+    font-family: Arial, sans-serif;  
+    background-color: #eee;  
+}  
+
+.container {
+    /* добавьте одинаковый внутренний отступ по горизонтали */
+    padding: 0 800px; /* 50px слева и справа */
+    box-sizing: border-box; /* чтобы padding учитывался в ширине */
+}
+
+/* Верхняя шапка - фиксированная */  
+header {  
+    position: fixed;  
+    top: 0;  
+    width: 100%;  
+    z-index: 999;  
+    padding: 20px;  
+    background-color: #62904d;  
+    color: white;  
+    display: flex;  
+    align-items: center;  
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
+    box-sizing: border-box;  
+}  
+
+/* Обертка логотипа */  
+.logo-holder {  
+    display: flex;  
+    align-items: center;  
+    width: 100%;
+    height: 30px;
+}  
+
+/* Логотип */  
+.logo-holder img {  
+    max-width: 100px;  
+}  
+
+/* Заголовок в шапке — по центру */  
+h1 {  
+    position: absolute;  
+    left: 50%;  
+    transform: translateX(-50%);  
+    margin: 0;  
+}  
+
+/* Меню-карусель */  
+.menu-carousel {  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    position: relative;  
+    width: 100%; /* Расширяется на всю ширину */  
+    margin: 20px auto;  
+    padding-top: 80px; /* чтобы учесть высоту фиксированной шапки */  
+    min-height: 150px; /* чтобы было удобно размещать */  
+}  
+
+/* Область прокрутки */  
+.menu__viewport {  
+    display: flex;  
+    overflow-y: hidden; /* вертикальная прокрутка отключена */  
+    overflow-x: hidden; /* скрываем ползунок прокрутки */
+    scroll-behavior: smooth;  
+    width: 100%;  
+}   
+/* Элементы внутри карусели */  
+.menu__item {  
+    flex: 0 0 100%; /* занимает всю ширину контейнера */  
+    box-sizing: border-box;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    padding: 10px;  
+}  
+
+/* Обертка для изображений и подсказок */  
+.image-container {  
+    position: relative;  
+    display: inline-block;  
+}  
+
+/* Стиль для изображений в ряду */  
+.images-row {  
+    display: flex;  
+    justify-content: space-around; /* равномерное распределение */  
+    align-items: center;  
+    margin: 40px 0; /* большая вертикальная полоска для разделения */  
+}  
+.images-row img {  
+    max-width: 100px; /* размер изображений */  
+    height: auto;  
+}  
+
+/* Стиль для навигационных изображений */  
+.nav-img {  
+    width: 100%;  
+    max-width: 250px;  
+    height: auto;  
+    cursor: pointer;  
+    transition: transform 0.3s ease;  
+    display: block;  
+    border-radius: 8px;  
+}  
+
+/* Увеличение при наведение */  
+.nav-img:hover {  
+    transform: scale(1.1);  
+}  
+
+.active-zoom {  
+    transform: scale(1.1) !important;  
+}  
+
+/* Текст подсказки */  
+.tooltip-text {  
+    position: absolute;  
+    bottom: -30px;  
+    left: 50%;  
+    transform: translateX(-50%);  
+    background-color: rgba(0, 0, 0, 0.75);  
+    color: #fff;  
+    padding: 5px 10px;  
+    border-radius: 4px;  
+    opacity: 0;  
+    transition: opacity 0.5s, bottom 0.5s;  
+    pointer-events: none;  
+    white-space: nowrap;  
+    font-size: 14px;  
+    z-index: 2;  
+}  
+
+/* Показывать подсказку при Hover */  
+.image-container:hover .tooltip-text {  
+    opacity: 1;  
+    bottom: 0;  
+}  
+
+/* Стрелки прокрутки */
+.scroll-btn {
+    position: absolute;
+    top: 63%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.scroll-left {
+    left: 10px;
+}
+
+.scroll-right {
+    right: 10px;
+}
+
+/* Вкладки (контент) */
+.tab-content {
+    display: none;
+    padding: 20px;
+    margin-top: 80px; /* чтобы не перекрывало фиксированное меню/шапку */
+}
+
+/* Первое значение всегда показывается */
+#tab1 {
+    display: block;
+}
+
+/* Заголовки */
+h2 {
+    color: #4CAF50;
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    margin: 0 0 10px 0;
+}
+
+/* Тексты */
+p {
+    line-height: 1.5;
+}
+
+/* Подвал сайта фиксированный снизу */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.rectangle {
+  display: flex;
+  align-items: flex-start; /* по верхней линии, чтобы картинка был сверху */
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+}
+.icon {
+  max-width: 130px;
+  margin-right: 10px;
+  /* можно добавить чуть больше отступа сверху, чтобы было аккуратно */
+  margin-top: 5px;
+}
+.foto {
+  margin-right: 10px;
+  /* можно добавить чуть больше отступа сверху, чтобы было аккуратно */
+  margin-top: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column; /* располагаем заголовок и текст вертикально */
+}
+
+.textfoto {
+  font-size: 18px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+/* обычный текст */
+.text {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  line-height: 1.6; /* улучшенная читаемость */
+  color: #141414; /* мягкий темный цвет */
+  border-radius: 4px;
+  padding: 4px 8px;
+  transition: all 0.3s ease;
+}
+/* обычный текст ьез отступов */
+.textb {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6; /* улучшенная читаемость */
+  color: #141414; /* мягкий темный цвет */
+  border-radius: 4px;
+  padding: 4px 8px;
+  transition: all 0.3s ease;
+}
+
+/* текст для заголовков */
+.ztext {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #2c3e50; /* приятный глубокий цвет */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+}
+
+/* текст для заголовков без отступов */
+.ztextb {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50; /* приятный глубокий цвет */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+}
+
+/* текст для подзаголовков */
+.ytext {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  color: #263544; /* чуть светлее, для различия */
+  font-style: italic;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  opacity: 0.9;
+}
+
+/* стиль для ссылок, похожий на обычный текст, с меньшими отступами */
+.link-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: #000000; /* стандартный цвет для ссылок или выберите свой */
+  text-decoration: none; /* убрать подчеркивание по умолчанию */
+  padding: 2px 4px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    /* Можно оставить position: fixed; если нужен фиксированный внизу */
+    display: flex;
+    flex-wrap: wrap; /* чтобы элементы переносились при необходимости */
+    align-items: center; /* вертикальное выравнивание */
+    justify-content: center; /* горизонтальное выравнивание по центру */
+    gap: 20px; /* расстояние между элементами */
+}
+
+.custom-link {
+    display: flex;
+    flex-direction: column-reverse; /* меняем порядок */
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}

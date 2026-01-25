@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Книжный уголок</title>
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+<header>
+    <div class="logo-holder">
+        <a href="#" id="logo-link">
+            <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
+        </a>
+        <h1>Книжный уголок</h1>
+    </div>
+</header>
+
+<div class="container">
+
+  <!-- Карусель сразу после хедера -->
+  <section class="menu-carousel" id="carousel">
+    <button class="scroll-btn scroll-left" onclick="scrollCarousel('left')">←</button>
+    <div class="menu__viewport">
+      <!-- Первый элемент -->
+      <div class="menu__item">
+        <a href="books.html" class="nav-link" data-tab="tab2" title="Популярные книги">
+          <div class="image-container">
+            <img src="https://i.ibb.co/Jw8KD3NG/image.png" class="nav-img" alt="Популярные книги" />
+            <div class="tooltip-text">Просмотр популярных пересказов</div>
+          </div>
+        </a>
+      </div>
+      <!-- Второй элемент -->
+      <div class="menu__item">
+        <a href="nov.html" class="nav-link" data-tab="tab5" title="Обзор книг">
+          <div class="image-container">
+            <img src="https://i.ibb.co/KxsBPF64/image.png" class="nav-img" alt="Обзор книг" />
+            <div class="tooltip-text">Перейти к новинкам</div>
+          </div>
+        </a>
+      </div>
+      <!-- Третий элемент -->
+      <div class="menu__item">
+        <a href="avtor.html" class="nav-link" data-tab="tab3" title="Об авторе">
+          <div class="image-container">
+            <img src="https://i.ibb.co/4ZDHkL6r/image.png" class="nav-img" alt="Об авторе" />
+            <div class="tooltip-text">Подробнее об авторах</div>
+          </div>
+        </a>
+      </div>
+      <!-- Четвертый элемент -->
+      <div class="menu__item">
+        <a href="reviews.html" class="nav-link" data-tab="tab4" title="Отзывы">
+          <div class="image-container">
+            <img src="https://i.ibb.co/JjK9R0kd/image.png" class="nav-img" alt="Отзывы" />
+            <div class="tooltip-text">Отзывы посетителей о сайте</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollCarousel('right')">→</button>
+  </section>
+
+  <!-- Основная вкладка "Главная страница" -->
+  <div id="tab1" class="tab-content" style="margin-top:20px;">
+    <h2>Главная страница</h2>
+    <section class="images-row">
+      <img src="https://i.ibb.co/xK4Bv9Mv/image.png" alt="книги" />
+      <img src="https://i.ibb.co/RFm6r9J/image.png" alt="новинки" />
+      <img src="https://i.ibb.co/cSM2wWbN/image.png" alt="отзывы" />
+      <img src="https://i.ibb.co/YTBN31j3/image.png" alt="авторы" />
+    </section>
+  </div>
+
+</div>
+
+<footer>
+    <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="custom-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png" alt="Иконка" style="width: 30px; height: 30px; margin-right: 8px;" />
+        <span style="color: #fff;">Следить за нами</span>
+    </a>
+    <a class="custom-link" style="display: flex; align-items: center; cursor: pointer;">
+        <span id="phone" style="cursor: pointer; color: #fff; text-decoration: underline; line-height: 40px; margin-left: 20px;" onclick="copyToClipboard('8 800 555 35 55')">8 800 555 35 55</span>
+        <span style="color: #fff; margin-left: 8px; margin-top: 15px;">По вопросам</span>
+    </a>
+    <a class="custom-link" style="display: flex; align-items: center; cursor: pointer;">
+        <span id="email" style="cursor: pointer; color: #fff; text-decoration: underline; line-height: 40px; margin-left: 20px;" onclick="copyToClipboard('privet@gmail.com')">privet@gmail.com</span>
+        <span style="color: #fff; margin-left: 8px; margin-top: 15px;">По рекламме</span>
+    </a>
+    <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="custom-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Иконка" style="width: 30px; height: 30px; margin-right: 8px;" />
+        <span style="color: #fff;">Поддержать</span>
+    </a>
+</footer>
+
+<!-- Скрипт для прокрутки карусели -->
+<script>
+function scrollCarousel(direction) {
+    const viewport = document.querySelector('.menu__viewport');
+    const itemWidth = viewport.offsetWidth;
+    if (direction === 'left') {
+        viewport.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+    } else if (direction === 'right') {
+        viewport.scrollBy({ left: itemWidth, behavior: 'smooth' });
+    }
+}
+</script>
+</body>
+</html>
