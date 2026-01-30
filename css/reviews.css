@@ -3,21 +3,19 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #eee;
-    overflow-x: hidden; /* скрываем ползунок прокрутки */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
+/* Основной контейнер - адаптивный */
+.container {
     width: 100%;
-    /* Можно оставить position: fixed; если нужен фиксированный внизу */
-    display: flex;
-    flex-wrap: wrap; /* чтобы элементы переносились при необходимости */
-    align-items: center; /* вертикальное выравнивание */
-    justify-content: center; /* горизонтальное выравнивание по центру */
-    gap: 20px; /* расстояние между элементами */
-    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    flex: 1;
 }
 
 /* Верхняя шапка - фиксированная */  
@@ -25,12 +23,13 @@ header {
     position: fixed;  
     top: 0;  
     width: 100%;  
-    z-index: 999;  
-    padding: 20px;  
+    z-index: 1000;  
+    padding: 15px 20px;  
     background-color: #62904d;  
     color: white;  
     display: flex;  
     align-items: center;  
+    justify-content: space-between;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
     box-sizing: border-box;  
 } 
@@ -39,28 +38,46 @@ header {
 .logo-holder {  
     display: flex;  
     align-items: center;  
+    justify-content: space-between;
     width: 100%;
-    height: 30px;
+    height: 40px;
 }  
 
 /* Логотип */  
 .logo-holder img {  
     max-width: 100px;  
+    height: auto;
 }  
 
-/* Заголовок в шапке — по центру */  
+/* Заголовок в шапке */  
 h1 {  
-    position: absolute;  
-    left: 50%;  
-    transform: translateX(-50%);  
-    margin: 0;  
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    flex-grow: 1;
 }  
 
+/* Кнопка возврата */
+.back-button {
+    display: block;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
 
-.container {
-    /* добавьте одинаковый внутренний отступ по горизонтали */
-    padding: 0 800px; /* 50px слева и справа */
-    box-sizing: border-box; /* чтобы padding учитывался в ширине */
+.back-button img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.back-button:hover img {
+    transform: scale(1.1);
+}
+
+/* Секция формы */
+.review-form-section {
+    margin-bottom: 40px;
 }
 
 /* Основной прямоугольник с закругленными углами */
@@ -69,78 +86,41 @@ h1 {
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     box-sizing: border-box;
     position: relative;
-    margin-top: 80px;
+    width: 100%;
 }
 
-/* Поля ввода и textarea */
-input[type="text"],
-textarea {
-    width: calc(100% - 40px);
-    margin: 0 20px 20px 20px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    box-sizing: border-box;
+/* Загрузка аватара */
+.avatar-upload {
+    margin-bottom: 20px;
 }
 
-/* Текстовая область */
-textarea {
-    resize: vertical;
-    height: 100px;
-}
-
-/* Кнопка "Добавить отзыв" */
-button[type="submit"] {
-    position: absolute;
-    bottom: -35px;
-    right: 20px;
-    padding: 12px 25px;
-    border-radius: 8px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* Стиль отзывов */
-#reviewsContainer {
-    margin-top: 40px;
-}
-
-.review-card {
+.upload-preview-container {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-    padding: 10px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-.reviewer-avatar {
+.avatar-preview {
+    display: none;
     width: 80px;
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 15px;
+    border: 2px solid #ccc;
 }
 
-.review-content {
-    flex: 1;
+.upload-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Стиль для кастомной кнопки загрузки изображения */
+/* Кнопка загрузки */
 .upload-label {
     display: inline-block;
     padding: 12px 24px;
@@ -152,6 +132,7 @@ button[type="submit"]:hover {
     font-size: 16px;
     transition: background-color 0.3s ease;
     text-align: center;
+    border: none;
 }
 
 .upload-label:hover {
@@ -162,101 +143,492 @@ button[type="submit"]:hover {
     display: none;
 }
 
-/* обычный текст */
-.text {
-  font-family: 'Arial', sans-serif;
-  font-size: 18px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  line-height: 1.6; /* улучшенная читаемость */
-  color: #141414; /* мягкий темный цвет */
-  border-radius: 4px;
-  padding: 4px 8px;
-  transition: all 0.3s ease;
+/* Форма отзыва */
+.review-form {
+    position: relative;
 }
 
-/* текст для заголовков */
-.ztext {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #2c3e50; /* приятный глубокий цвет */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  letter-spacing: 0.5px;
+.form-input,
+.form-textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-/* текст для подзаголовков */
-.ytext {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 20px;
-  margin-top: 5px;
-  margin-bottom: 2px;
-  color: #263544; /* чуть светлее, для различия */
-  font-style: italic;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  opacity: 0.9;
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
-/* Стиль для модального окна просмотра изображений */
+.form-buttons {
+    margin-top: 20px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Секция отзывов */
+.reviews-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Карточка отзыва */
+.review-card {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.reviewer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    align-self: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.reviewer-avatar:hover {
+    transform: scale(1.1);
+}
+
+.review-content {
+    flex: 1;
+    width: 100%;
+}
+
+/* Подвал сайта */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.footer-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.footer-text {
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-phone,
+.footer-email {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.footer-label {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.bottom-spacer {
+    height: 50px;
+}
+
+/* Модальное окно */
 .modal {
     position: fixed;
-    z-index: 9999; /* выше остальных элементов */
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    display: flex; /* по умолчанию скрыт, показывать при необходимости */
+    display: none;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    cursor: zoom-out; /* курсор при наведении */
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
 }
 
-/* Большое изображение внутри модалки */
 .modal-content {
     max-width: 90%;
     max-height: 80%;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     border-radius: 8px;
+    object-fit: contain;
 }
 
-/* Кнопка закрытия для модалки */
 .close-button {
     position: absolute;
     top: 20px;
-    right: 40px;
+    right: 20px;
     color: #fff;
     font-size: 40px;
     cursor: pointer;
     font-weight: bold;
-}
-#previewImage {
-    width: 80px;
-    height: 80px;
-    object-fit: cover; /* чтобы изображение занимало весь блок и было в рамке */
-    border-radius: 50%; /* чтобы было круглым */
-    border: 2px solid #ccc; /* легкая рамка, можно по желанию */
-    display: block;
-    margin-top: 10px;
-}
-
-.custom-link {
+    z-index: 10001;
+    width: 40px;
+    height: 40px;
     display: flex;
-    flex-direction: column-reverse; /* меняем порядок */
     align-items: center;
-    text-decoration: none;
-    cursor: pointer;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
-.link-icon {
-    width: 50px;
-    height: 50px;
+.close-button:hover {
+    background: rgba(0,0,0,0.7);
 }
 
-.link-text {
-    color: #000;
+/* Текстовые стили */
+.text {
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.6;
+    color: #141414;
+    border-radius: 4px;
+    padding: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.ztext {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    letter-spacing: 0.5px;
+}
+
+.ytext {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    margin: 8px 0;
+    color: #263544;
+    font-style: italic;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
+}
+
+/* Медиа-запросы для адаптивности */
+
+/* Планшеты (768px и выше) */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    header {
+        padding: 20px 40px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .back-button {
+        margin-top: 100px;
+    }
+    
+    .rectangle {
+        padding: 30px;
+        padding-bottom: 90px;
+    }
+    
+    .upload-preview-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .upload-controls {
+        align-items: flex-start;
+    }
+    
+    .submit-button {
+        width: auto;
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+    }
+    
+    .review-card {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    
+    .reviewer-avatar {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+        margin-bottom: 0;
+        align-self: flex-start;
+    }
+    
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    
+    .footer-link {
+        flex-direction: row;
+        gap: 8px;
+    }
+    
+    .footer-icon {
+        margin-bottom: 0;
+        margin-right: 8px;
+    }
+    
+    .text {
+        font-size: 18px;
+    }
+    
+    .ztext {
+        font-size: 24px;
+    }
+    
+    .ytext {
+        font-size: 20px;
+    }
+    
+    .close-button {
+        top: 40px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        font-size: 50px;
+    }
+}
+
+/* Десктопы (1024px и выше) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 60px;
+    }
+    
+    header {
+        padding: 20px 60px;
+    }
+    
+    .rectangle {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 40px;
+        padding-bottom: 100px;
+    }
+    
+    .review-card {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .upload-label {
+        max-width: 200px;
+    }
+}
+
+/* Большие экраны (1200px и выше) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .rectangle {
+        max-width: 900px;
+        padding: 50px;
+        padding-bottom: 110px;
+    }
+    
+    .review-card {
+        max-width: 850px;
+    }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    header {
+        padding: 10px 15px;
+    }
+    
+    .logo-holder img {
+        max-width: 80px;
+    }
+    
+    h1 {
+        font-size: 1rem;
+    }
+    
+    .back-button {
+        margin-top: 80px;
+    }
+    
+    .back-button img {
+        width: 40px;
+    }
+    
+    .rectangle {
+        padding: 15px;
+        padding-bottom: 70px;
+        border-radius: 15px;
+    }
+    
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    
+    .review-card {
+        padding: 12px;
+    }
+    
+    .reviewer-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .upload-label {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    
+    .text {
+        font-size: 15px;
+    }
+    
+    .ztext {
+        font-size: 18px;
+    }
+    
+    .ytext {
+        font-size: 16px;
+    }
+    
+    .close-button {
+        top: 15px;
+        right: 15px;
+        font-size: 35px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Отключение hover на сенсорных устройствах */
+@media (hover: none) and (pointer: coarse) {
+    .submit-button:hover {
+        background-color: #4CAF50;
+    }
+    
+    .upload-label:hover {
+        background-color: #4CAF50;
+    }
+    
+    .footer-link:hover {
+        background-color: transparent;
+    }
+    
+    .review-card:hover {
+        transform: none;
+    }
+    
+    .reviewer-avatar:hover {
+        transform: none;
+    }
+    
+    .back-button:hover img {
+        transform: none;
+    }
+    
+    .close-button:hover {
+        background: rgba(0,0,0,0.5);
+    }
+}
+
+/* Улучшение UX для полей ввода */
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Удаление стандартных стилей для кнопок в iOS */
+input[type="text"],
+textarea,
+button,
+.upload-label {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
