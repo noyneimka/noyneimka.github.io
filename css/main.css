@@ -6,6 +6,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
 }  
 
 /* Основной контейнер */
@@ -53,10 +55,20 @@ header {
     font-size: 1.2rem;
     margin: 0;
     text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     flex-grow: 1;
+    width: auto;
 }  
 
-/* Меню-карусель - ПОСТОЯННО 1 ЭЛЕМЕНТ НА ЭКРАНЕ */
+/* Специальный элемент для балансировки */
+.header-spacer {
+    width: 100px;
+    visibility: hidden;
+}
+
+/* Меню-карусель */
 .menu-carousel {  
     display: flex;  
     align-items: center;  
@@ -65,24 +77,23 @@ header {
     width: 100%;  
     margin: 20px auto;  
     padding-top: 80px;  
-    min-height: 300px; /* Достаточно места для элемента */
+    min-height: 300px;
     box-sizing: border-box;
-    overflow: hidden; /* Скрываем все, что выходит за границы */
 }  
 
 /* Область прокрутки */
 .menu__viewport {  
     display: flex;  
-    overflow-x: hidden; /* Скрываем горизонтальную прокрутку */
+    overflow-x: hidden;
     scroll-behavior: smooth;  
     width: 100%;  
     -webkit-overflow-scrolling: touch;
 }   
 
-/* Элементы внутри карусели - КАЖДЫЙ ЗАНИМАЕТ 100% ШИРИНЫ */
+/* Элементы внутри карусели */
 .menu__item {  
-    flex: 0 0 100%; /* Фиксированная ширина 100% */
-    min-width: 100%; /* Минимальная ширина 100% */
+    flex: 0 0 100%;
+    min-width: 100%;
     box-sizing: border-box;  
     display: flex;  
     justify-content: center;  
@@ -95,7 +106,7 @@ header {
     position: relative;  
     display: inline-block;  
     width: 100%;
-    max-width: 400px; /* Максимальная ширина изображения */
+    max-width: 400px;
     text-align: center;
 }  
 
@@ -109,41 +120,50 @@ header {
     display: block;  
     border-radius: 8px;  
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    margin: 0 auto; /* Центрируем */
+    margin: 0 auto;
+    object-fit: contain;
+    transform-origin: center center;
 }  
 
 .nav-img:hover {  
     transform: scale(1.05);  
+    z-index: 10;
+    position: relative;
 }  
 
 .active-zoom {  
     transform: scale(1.05) !important;  
+    z-index: 10;
+    position: relative;
 }  
 
 /* Текст подсказки */
 .tooltip-text {  
     position: absolute;  
-    bottom: -30px;  
+    bottom: -40px;
     left: 50%;  
     transform: translateX(-50%);  
-    background-color: rgba(0, 0, 0, 0.75);  
+    background-color: rgba(0, 0, 0, 0.85);  
     color: #fff;  
-    padding: 5px 10px;  
-    border-radius: 4px;  
+    padding: 8px 12px;  
+    border-radius: 6px;  
     opacity: 0;  
     transition: opacity 0.5s, bottom 0.5s;  
     pointer-events: none;  
     white-space: nowrap;  
     font-size: 14px;  
-    z-index: 2;  
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    max-width: 90%;
+    text-align: center;
 }  
 
 .image-container:hover .tooltip-text {  
     opacity: 1;  
-    bottom: 0;  
+    bottom: -45px;
 }  
 
-/* Стрелки прокрутки - ВСЕГДА ВИДИМЫ */
+/* Стрелки прокрутки */
 .scroll-btn {
     position: absolute;
     top: 50%;
@@ -195,6 +215,7 @@ h2 {
     color: #4CAF50;
     margin-top: 0;
     font-size: 1.8rem;
+    text-align: center;
 }
 
 h1, h2, h3 {
@@ -215,55 +236,186 @@ h1, h2, h3 {
     max-width: 100px;  
     height: auto;
     flex: 0 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }  
 
 /* Подвал сайта */
 footer {
     background-color: #333;
     color: white;
-    padding: 15px;
+    padding: 20px 15px;
     width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
     margin-top: auto;
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
 }
 
-.custom-link {
+/* Контейнер для иконок */
+.footer-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Ссылка-иконка */
+.footer-icon-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer-icon-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.footer-icon-link:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    max-width: 150px;
+    text-align: center;
+}
+
+/* Иконки внутри ссылок */
+.footer-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* Специальная иконка Telegram SVG */
+.telegram-icon {
+    width: 25px;
+    height: 25px;
+    filter: brightness(0) invert(1);
+}
+
+/* Текстовые стили */
+.text {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    margin: 6px 0;
+    line-height: 1.6;
+    color: #141414;
+}
+
+.textb {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #141414;
+}
+
+.ztext {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.ztextb {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.ytext {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    margin: 7px 0;
+    color: #263544;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.ytext:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.link-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    margin: 4px 0;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Стили для внутренних страниц */
+.inner-page {
+    padding-top: 90px;
+}
+
+/* Фиксированная кнопка "Назад" в левом верхнем углу */
+.back-button-fixed {
+    position: fixed;
+    top: 85px;
+    left: 20px;
+    z-index: 1000;
+    display: block;
+    width: fit-content;
+    transition: transform 0.3s;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.back-button-fixed img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.back-button-fixed:hover img {
+    transform: scale(1.1);
+}
+
+/* Секция книг */
+.books-section {
+    margin-top: 0;
+    margin-bottom: 80px;
+}
+
+.books-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.custom-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.footer-icon {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-}
-
-.footer-text {
-    color: #fff;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.footer-label {
-    color: #fff;
-    font-size: 14px;
-    margin-top: 2px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 /* Прямоугольные блоки */
@@ -296,60 +448,13 @@ footer {
     width: 100%;
 }
 
-/* Текстовые стили */
 .textfoto {
     font-size: 18px;
     margin: 13px 0;
     text-align: center;
 }
 
-.text {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    margin: 6px 0;
-    line-height: 1.6;
-    color: #141414;
-}
-
-.textb {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #141414;
-}
-
-.ztext {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 10px 0;
-    color: #2c3e50;
-}
-
-.ztextb {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #2c3e50;
-}
-
-.ytext {
-    font-family: 'Georgia', serif;
-    font-size: 20px;
-    margin: 7px 0;
-    color: #263544;
-    font-style: italic;
-}
-
-.link-text {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    margin: 4px 0;
-    color: #000000;
-    text-decoration: none;
-}
-
-/* Медиа-запросы для адаптивности (только меняем размеры стрелок и отступы) */
+/* Медиа-запросы для адаптивности */
 
 /* Планшеты (768px и выше) */
 @media (min-width: 768px) {
@@ -383,24 +488,36 @@ footer {
         right: 30px;
     }
     
-    footer {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 20px;
+    .images-row {
+        gap: 30px;
     }
     
-    .custom-link {
-        flex-direction: row;
-        gap: 8px;
+    .images-row img {
+        max-width: 120px;
+    }
+    
+    .nav-img {
+        max-width: 500px;
+    }
+    
+    .footer-icons-container {
+        flex-wrap: nowrap;
+        gap: 50px;
+    }
+    
+    .footer-icon-link {
+        width: 55px;
+        height: 55px;
     }
     
     .footer-icon {
-        margin-bottom: 0;
-        margin-right: 8px;
+        width: 28px;
+        height: 28px;
     }
     
-    .footer-label {
-        margin-top: 0;
+    .telegram-icon {
+        width: 28px;
+        height: 28px;
     }
     
     .rectangle {
@@ -423,8 +540,8 @@ footer {
         text-align: left;
     }
     
-    .nav-img {
-        max-width: 500px;
+    .back-button-fixed {
+        top: 90px;
     }
 }
 
@@ -448,8 +565,82 @@ footer {
         right: 50px;
     }
     
+    .images-row {
+        gap: 40px;
+    }
+    
+    .images-row img {
+        max-width: 150px;
+    }
+    
     .nav-img {
         max-width: 600px;
+    }
+}
+
+/* Большие экраны (1440px и выше) */
+@media (min-width: 1440px) {
+    .images-row {
+        gap: 50px;
+    }
+    
+    .images-row img {
+        max-width: 180px;
+    }
+    
+    .footer-icons-container {
+        gap: 60px;
+    }
+    
+    .footer-icon-link {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .footer-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .telegram-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Очень большие экраны (1920px и выше) */
+@media (min-width: 1920px) {
+    .images-row {
+        gap: 70px;
+    }
+    
+    .images-row img {
+        max-width: 200px;
+    }
+    
+    .footer-icons-container {
+        gap: 80px;
+    }
+    
+    .footer-icon-link {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .footer-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .telegram-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .footer-icon-link:hover::after {
+        font-size: 14px;
+        padding: 8px 12px;
+        top: -50px;
     }
 }
 
@@ -469,6 +660,12 @@ footer {
     
     .header-title {
         font-size: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .header-spacer {
+        width: 80px;
     }
     
     .menu-carousel {
@@ -504,8 +701,39 @@ footer {
         max-width: 280px;
     }
     
+    .images-row {
+        gap: 15px;
+    }
+    
     .images-row img {
         max-width: 70px;
+    }
+    
+    .footer-icons-container {
+        gap: 20px;
+        justify-content: space-around;
+    }
+    
+    .footer-icon-link {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .footer-icon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .telegram-icon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .footer-icon-link:hover::after {
+        font-size: 12px;
+        padding: 5px 8px;
+        top: -40px;
+        max-width: 120px;
     }
     
     .text, .textb, .link-text {
@@ -519,6 +747,101 @@ footer {
     .ytext {
         font-size: 18px;
     }
+    
+    .inner-page {
+        padding-top: 70px;
+    }
+    
+    .back-button-fixed {
+        top: 70px;
+        left: 10px;
+    }
+    
+    .back-button-fixed img {
+        width: 40px;
+    }
+    
+    .books-section {
+        margin-bottom: 50px;
+    }
+    
+    .books-container {
+        gap: 12px;
+    }
+}
+
+/* Средние мобильные (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .header-title {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .images-row {
+        gap: 20px;
+    }
+    
+    .images-row img {
+        max-width: 90px;
+    }
+    
+    .footer-icons-container {
+        gap: 25px;
+        justify-content: center;
+    }
+    
+    .footer-icon-link {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .footer-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .telegram-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .back-button-fixed {
+        top: 80px;
+    }
+    
+    .back-button-fixed img {
+        width: 45px;
+    }
+    
+    .inner-page {
+        padding-top: 80px;
+    }
+}
+
+/* Для экранов с высотой меньше 900px (ноутбуки) */
+@media (max-height: 900px) and (min-width: 1024px) {
+    .images-row {
+        gap: 25px;
+    }
+    
+    .images-row img {
+        max-width: 100px;
+    }
+    
+    .menu-carousel {
+        min-height: 300px;
+    }
+}
+
+/* Для мобильных - меньшее увеличение */
+@media (max-width: 768px) {
+    .nav-img:hover {  
+        transform: scale(1.02);  
+    }  
+    
+    .active-zoom {  
+        transform: scale(1.02) !important;  
+    }  
 }
 
 /* Отключение hover на сенсорных устройствах */
@@ -531,12 +854,64 @@ footer {
         opacity: 0;
     }
     
-    .custom-link:hover {
-        background-color: transparent;
+    .footer-icon-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: none;
     }
     
     .scroll-btn:hover {
         transform: translateY(-50%);
         background-color: rgba(51, 51, 51, 0.8);
     }
+    
+    .footer-icon-link:hover::after {
+        display: none;
+    }
+    
+    .back-button-fixed:hover img {
+        transform: none;
+    }
+    
+    .ytext:hover {
+        color: #263544;
+        text-decoration: none;
+    }
+}
+
+/* Дополнительные стили для предотвращения скролла */
+.menu__viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.menu__viewport {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+* {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Скрываем скроллбар для всего сайта */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
