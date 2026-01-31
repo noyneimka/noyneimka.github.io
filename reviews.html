@@ -13,15 +13,16 @@
                 <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
             </a>
             <h1>Отзывы</h1>
+            <div class="header-spacer"></div>
         </div>
     </header>
     
-    <main class="container">
-        <!-- Кнопка возврата -->
-        <a href="index.html" class="back-button">
-            <img src="https://i.ibb.co/k2M1GSJh/1.png" alt="Назад" />
-        </a>
-        
+    <!-- Кнопка возврата с фиксированным позиционированием -->
+    <a href="index.html" class="back-button-fixed">
+        <img src="https://i.ibb.co/k2M1GSJh/1.png" alt="Назад" />
+    </a>
+    
+    <main class="container inner-page">
         <!-- Раздел формы для добавления отзывов -->
         <section class="review-form-section">
             <div class="rectangle">
@@ -120,22 +121,26 @@
     </main>
     
     <footer>
-        <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="footer-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png" alt="Telegram" class="footer-icon" />
-            <span class="footer-text">Следить за нами</span>
-        </a>
-        <a class="footer-link" onclick="copyToClipboard('8 800 555 35 55')">
-            <span id="phone" class="footer-phone">8 800 555 35 55</span>
-            <span class="footer-label">По вопросам</span>
-        </a>
-        <a class="footer-link" onclick="copyToClipboard('privet@gmail.com')">
-            <span id="email" class="footer-email">privet@gmail.com</span>
-            <span class="footer-label">По рекламе</span>
-        </a>
-        <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="footer-link">
-            <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Сбербанк" class="footer-icon" />
-            <span class="footer-text">Поддержать</span>
-        </a>
+        <div class="footer-icons-container">
+            <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="footer-icon-link" title="Следить за нами">
+                <!-- Новая иконка Telegram - треугольник -->
+                <svg class="footer-icon telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2,21l20-9L2,3V10l15,2L2,14Z"/>
+                </svg>
+            </a>
+            <a class="footer-icon-link" title="По вопросам" onclick="copyToClipboard('8 800 555 35 55')">
+                <!-- Новая иконка телефона -->
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25453.png" alt="Телефон" class="footer-icon" />
+            </a>
+            <a class="footer-icon-link" title="По рекламе" onclick="copyToClipboard('privet@gmail.com')">
+                <!-- Новая иконка почты -->
+                <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="footer-icon" />
+            </a>
+            <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="footer-icon-link" title="Поддержать нас">
+                <!-- Оставляем текущую иконку Сбера -->
+                <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Сбербанк" class="footer-icon" />
+            </a>
+        </div>
     </footer>
     
     <!-- Модальное окно для просмотра изображений -->
@@ -236,11 +241,8 @@
         function copyToClipboard(text) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text)
-                    .then(() => alert("Текст скопирован: " + text))
-                    .catch(err => {
-                        // Fallback для старых браузеров
-                        fallbackCopyText(text);
-                    });
+                    .then(() => showNotification("Скопировано: " + text))
+                    .catch(err => fallbackCopyText(text));
             } else {
                 fallbackCopyText(text);
             }
@@ -254,14 +256,53 @@
             try {
                 const successful = document.execCommand('copy');
                 if (successful) {
-                    alert("Текст скопирован: " + text);
+                    showNotification("Скопировано: " + text);
                 } else {
-                    alert("Не удалось скопировать текст");
+                    showNotification("Не удалось скопировать текст");
                 }
             } catch (err) {
-                alert("Ошибка при копировании: " + err);
+                showNotification("Ошибка при копировании: " + err);
             }
             document.body.removeChild(textarea);
+        }
+        
+        // Функция для показа уведомлений
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                z-index: 9999;
+                font-size: 16px;
+                text-align: center;
+                animation: fadeInOut 3s ease;
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInOut {
+                    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+                style.remove();
+            }, 3000);
         }
         
         // Закрытие модального окна при клике вне изображения
@@ -288,5 +329,5 @@
             });
         });
     </script>
-</body> 
+</body>
 </html>
