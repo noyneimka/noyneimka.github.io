@@ -13,6 +13,7 @@
                 <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
             </a>
             <h1 class="header-title">Книжный уголок</h1>
+            <div class="header-spacer"></div> <!-- Для балансировки -->
         </div>
     </header>
 
@@ -74,23 +75,27 @@
     </main>
 
     <footer>
-        <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="custom-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png" alt="Telegram" class="footer-icon" />
-            <span>Следить за нами</span>
+    <div class="footer-icons-container">
+        <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="footer-icon-link" title="Следить за нами">
+                <!-- Новая иконка Telegram - треугольник -->
+                <svg class="footer-icon telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2,21l20-9L2,3V10l15,2L2,14Z"/>
+                </svg>
+            </a>
+        <a class="footer-icon-link" title="По вопросам" onclick="copyToClipboard('8 800 555 35 55')">
+            <!-- Новая иконка телефона -->
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25453.png" alt="Телефон" class="footer-icon" />
         </a>
-        <a class="custom-link" onclick="copyToClipboard('8 800 555 35 55')">
-            <span id="phone" class="footer-text">8 800 555 35 55</span>
-            <span class="footer-label">По вопросам</span>
+        <a class="footer-icon-link" title="По рекламе" onclick="copyToClipboard('privet@gmail.com')">
+            <!-- Новая иконка почты -->
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="footer-icon" />
         </a>
-        <a class="custom-link" onclick="copyToClipboard('privet@gmail.com')">
-            <span id="email" class="footer-text">privet@gmail.com</span>
-            <span class="footer-label">По рекламе</span>
-        </a>
-        <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="custom-link">
+        <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="footer-icon-link" title="Поддержать нас">
+            <!-- Оставляем текущую иконку Сбера -->
             <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Сбербанк" class="footer-icon" />
-            <span>Поддержать</span>
         </a>
-    </footer>
+    </div>
+</footer>
 
     <script>
         // Функция для прокрутки карусели
@@ -98,19 +103,16 @@
             const viewport = document.querySelector('.menu__viewport');
             const items = document.querySelectorAll('.menu__item');
             const currentScroll = viewport.scrollLeft;
-            const itemWidth = viewport.offsetWidth; // Ширина одного элемента (100% ширины viewport)
+            const itemWidth = viewport.offsetWidth;
             
-            // Определяем индекс текущего элемента
             let currentIndex = Math.round(currentScroll / itemWidth);
             
-            // Определяем следующий индекс
             if (direction === 'left') {
                 currentIndex = currentIndex > 0 ? currentIndex - 1 : items.length - 1;
             } else if (direction === 'right') {
                 currentIndex = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
             }
             
-            // Прокручиваем к нужному элементу
             viewport.scrollTo({
                 left: currentIndex * itemWidth,
                 behavior: 'smooth'
@@ -119,13 +121,74 @@
 
         // Функция для копирования в буфер обмена
         function copyToClipboard(text) {
-            navigator.clipboard.writeText(text)
-                .then(() => {
-                    alert('Скопировано: ' + text);
-                })
-                .catch(err => {
-                    console.error('Ошибка копирования: ', err);
-                });
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text)
+                    .then(() => {
+                        showNotification('Скопировано: ' + text);
+                    })
+                    .catch(err => {
+                        fallbackCopyText(text);
+                    });
+            } else {
+                fallbackCopyText(text);
+            }
+        }
+
+        function fallbackCopyText(text) {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showNotification('Скопировано: ' + text);
+                } else {
+                    showNotification('Не удалось скопировать текст');
+                }
+            } catch (err) {
+                showNotification('Ошибка при копировании: ' + err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        // Функция для показа уведомлений
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                z-index: 9999;
+                font-size: 16px;
+                text-align: center;
+                animation: fadeInOut 3s ease;
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInOut {
+                    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+                style.remove();
+            }, 3000);
         }
 
         // Автоматическая прокрутка карусели
@@ -134,19 +197,17 @@
         function startAutoScroll() {
             autoScrollInterval = setInterval(() => {
                 scrollCarousel('right');
-            }, 5000); // Меняем каждые 5 секунд
+            }, 5000);
         }
         
         function stopAutoScroll() {
             clearInterval(autoScrollInterval);
         }
         
-        // Запускаем автопрокрутку при загрузке
         window.addEventListener('load', () => {
             startAutoScroll();
         });
         
-        // Останавливаем автопрокрутку при наведении
         const carouselSection = document.querySelector('.menu-carousel');
         if (carouselSection) {
             carouselSection.addEventListener('mouseenter', stopAutoScroll);
