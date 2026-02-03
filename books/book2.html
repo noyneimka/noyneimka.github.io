@@ -1,41 +1,356 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8" />
-<title>Преступление и наказание</title>
+<!DOCTYPE html>  
+<html lang="ru">  
+<head>  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+<title>Дубровский</title>  
 <link rel="stylesheet" href="/css/main.css" />
-</head>
-<body>
+</head>  
+<body>  
 <header>
     <div class="logo-holder">
         <a href="/index.html" id="logo-link">
             <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
         </a>
-        <h1>Преступление и наказание</h1>
+        <h1>Дубровский</h1>
+        <div class="header-spacer"></div>
     </div>
-</header>
-<div class="container">
- <main>
-  <div style="margin-top:100px; margin-bottom: 100px;">  
-   <nav>
-    <div class="ztext" style="margin: 0;">Содержание</div>
-    <ul>
-     <div class="text"><a href="#ochom">О чем произведение</a></div>
-     <div class="text"><a href="#characters">К разделу 2</a></div>
-     <div class="text"><a href="#text">К разделу 3</a></div>
-    </ul>
-   </nav>   
-    <div id="ochom" class="ztext">О чем произведение</div>
-    <div class="ytext">Нищий студент убил старуху-процентщицу, но использовать её богатство на благо ближних не успел. Из-за мук совести и нервной лихорадки он признался в содеянном и после суда отправился на каторгу.</div>
-    <div id="ochom" class="ztext">Персонажи</div>
-    <div id="characters"class="text"  >
-        <a href="#character-0">Родион Романович Раскольников</a>&nbsp;· 
+</header> 
+
+<!-- Кнопка возврата -->
+<a href="/books.html" class="back-button-fixed">
+    <img src="https://i.ibb.co/k2M1GSJh/1.png" alt="Назад" />
+</a>
+
+<main class="container inner-page" style="margin-top: 80px;">
+    <!-- Секция содержания -->
+    <div class="books-section">
+        <!-- Оглавление в стилизованном блоке -->
+        <div class="rectangle" style="margin-bottom: 40px; background-color: #f8f8f8;">
+            <div class="content" style="width: 100%;">
+                <div class="ztextb" style="text-align: center; margin-bottom: 20px;">Содержание</div>
+                
+                <nav class="table-of-contents">
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                О чем произведение
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Персонажи
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Пересказ по главам
+                            </a>
+                            <div class="toc-chapters" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-left: 20px;">
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#1" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Глава 1-5</a>
+                                    <a href="#2" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Глава 6-10</a>
+                                    <a href="#3" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Глава 11-15</a>
+                                </div>
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#4" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Глава 16-19</a>
+                                    <a href="#epilogue" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Заключение</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- О чем произведение -->
+        <section id="ochom" class="content-section" style="margin-bottom: 50px;">
+            <div class="rectangle" style="background-color: #f0f7f0; border-left: 5px solid #62904d;">
+                <div class="content">
+                    <div class="ztextb" style="color: #2c3e50; margin-bottom: 15px;">О чем произведение</div>
+                    <div class="text" style="line-height: 1.8; font-size: 17px;">«Дубровский» — незаконченный роман Александра Пушкина, повествующий о молодом дворянине Владимире Дубровском, который становится благородным разбойником после того, как его отец умирает из-за несправедливости богатого соседа Троекурова. Владимир пытается отомстить за отца, но влюбляется в дочь своего врага — Машу Троекурову. Роман затрагивает темы социальной несправедливости, чести, мести и любви.</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Персонажи -->
+        <section id="characters" class="content-section" style="margin-bottom: 50px;">
+            <div class="ztext" style="margin-bottom: 20px;">Персонажи</div>
+            <div class="rectangle" style="background-color: #f8f8f8; padding: 20px;">
+                <div class="characters-links" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+                    <a href="#character-0" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Владимир Дубровский</a>
+                    <a href="#character-1" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Кирила Троекуров</a>
+                    <a href="#character-2" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Маша Троекурова</a>
+                    <a href="#character-3" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Андрей Дубровский</a>
+                    <a href="#character-4" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Князь Верейский</a>
+                    <a href="#character-5" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Антон Спицын</a>
+                    <a href="#character-6" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Дефорж</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Подробный пересказ -->
+        <section id="text" class="content-section">
+            <div class="ztext" style="margin-bottom: 30px; text-align: center;">Подробный пересказ по частям</div>
+            
+            <!-- Главы 1-5 -->
+            <article id="1" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 1-5</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Ссора Троекурова и Дубровского. Смерть отца</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Богатый и влиятельный помещик Кирила Петрович Троекуров живет в роскоши и имеет множество связей. Его сосед и старый друг — небогатый дворянин Андрей Гаврилович Дубровский. Однажды во время охоты происходит ссора: псарь Троекурова оскорбляет Дубровского, который в ответ требует извинений. Троекуров отказывается, и Дубровский уезжает. Оскорбленный Троекуров решает отомстить.</div>
+                
+                <!-- Персонаж 0 -->
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7373.avif" alt="Владимир Дубровский" class="icon" id="character-0" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Владимир Андреевич Дубровский</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">23-летний корнет, сын Андрея Дубровского. Образованный, благородный, гордый молодой человек. После смерти отца становится предводителем разбойников, но сохраняет благородство и честь. Влюбляется в Машу Троекурову.</div>
+                    </div>
+                </div>
+                
+                <!-- Персонаж 1 -->
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7374.avif" alt="Кирила Троекуров" class="icon" id="character-1" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Кирила Петрович Троекуров</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Богатый помещик, отставной генерал-аншеф, владелец 3000 душ. Вспыльчивый, самовластный, избалованный своим положением. Имеет огромное влияние в губернии. Любит свою дочь Машу, но часто проявляет деспотизм.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Троекуров с помощью подкупленных чиновников отсуживает у Дубровского его имение Кистеневку. Когда судебные приставы приезжают описывать имущество, Андрей Дубровский сходит с ума от горя. Владимир, служивший в гвардии в Петербурге, получает известие о болезни отца и спешно возвращается домой. Он застает отца при смерти. Старый Дубровский умирает на руках у сына.</div>
+                
+                <!-- Персонаж 2 -->
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7375.avif" alt="Маша Троекурова" class="icon" id="character-2" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Мария Кириловна Троекурова</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">17-летняя дочь Троекурова, красивая, образованная, мечтательная девушка. Воспитывалась на французских романах. Искренне влюбляется в Дубровского под видом учителя Дефоржа. Вынуждена выйти замуж за старого князя Верейского.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Владимир хоронит отца. В день, когда чиновники во главе с заседателем Шабашкиным должны вступить во владение имением, Владимир сжигает родной дом, чтобы он не достался Троекурову. В огне погибают приказные, которые заперты в доме. Дубровский с верными крестьянами уходит в лес и становится предводителем разбойников.</div>
+            </article>
+            
+            <!-- Главы 6-10 -->
+            <article id="2" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 6-10</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Дубровский под видом учителя</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Разбойничая, Дубровский грабит только богатых помещиков, не трогая бедных. Слава о благородном разбойнике распространяется по всей округе. Тем временем Троекуров нанимает для своей дочери Маши французского учителя — мосье Дефоржа. На самом деле это Дубровский, который подкупил настоящего учителя и занял его место.</div>
+                
+                <!-- Персонаж 3 -->
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7376.avif" alt="Андрей Дубровский" class="icon" id="character-3" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Андрей Гаврилович Дубровский</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Отец Владимира, бедный дворянин, владелец 70 душ. Гордый, независимый, честный человек. Старый друг Троекурова, но после ссоры становится его врагом. Умирает от потрясения после несправедливого суда.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">В доме Троекурова Дубровский проявляет необычные для учителя качества: храбрость (когда ему подстраивают встречу с медведем), образованность и благородство. Маша постепенно влюбляется в учителя. Дубровский признается ей в любви и раскрывает свою тайну. Он просит Машу обратиться к нему в случае опасности.</div>
+                
+                <!-- Персонаж 4 -->
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7377.avif" alt="Князь Верейский" class="icon" id="character-4" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Князь Верейский</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Богатый 50-летний князь, сосед Троекурова. Хотя внешне учтив и галантен, на самом деле эгоистичен и развратен. Женится на Маше против ее воли, что приводит к трагическим последствиям.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Однажды к Троекурову приезжает сосед Спицын, который давал ложные показания на суде против Дубровского. Ночью Дубровский, все еще под видом учителя, грабит Спицына, забирая деньги и заставляя его написать признание в лжесвидетельстве. После этого Дубровский вынужден бежать из дома Троекурова.</div>
+            </article>
+            
+            <!-- Главы 11-15 -->
+            <article id="3" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 11-15</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Сватовство Верейского. Попытка спасения</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Троекуров знакомится с соседом — богатым князем Верейским. Тот, увидев Машу, решает жениться на ней. Троекуров, несмотря на слезы дочери, дает согласие на брак. Маша пишет письмо Дубровскому с просьбой о помощи. Дубровский получает письмо с опозданием из-за того, что посыльный попал в засаду.</div>
+                
+                <!-- Персонаж 5 -->
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7378.avif" alt="Антон Спицын" class="icon" id="character-5" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Антон Пафнутьич Спицын</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Толстый, трусливый помещик, который дал ложные показания на суде против Дубровского. Боится мести Владимира. После ограбления Дубровским бежит из имения Троекурова и признается в своем преступлении.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">В день свадьбы Маша надеется на спасение до последнего. Она отказывается произносить брачную клятву в церкви, но священник все равно проводит обряд. Выйдя из церкви, молодая пара встречает Дубровского с его людьми. Князь Верейский ранит Дубровского, но разбойники успевают схватить его. Маша отказывается бежать с Дубровским, так как считает себя обвенчанной и не может нарушить клятву.</div>
+                
+                <!-- Персонаж 6 -->
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7379.avif" alt="Дефорж" class="icon" id="character-6" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Дефорж</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Настоящий французский учитель, которого Дубровский встретил на станции. За 10 тысяч рублей отдает Дубровскому свои документы и рекомендательное письмо к Троекурову, позволяя тому проникнуть в дом под чужим именем.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Дубровский отпускает Машу и князя, понимая, что потерял ее навсегда. Он распускает свою шайку и уезжает за границу. Разбойничество в округе прекращается. Маша остается с мужем, обрекая себя на несчастливую жизнь.</div>
+            </article>
+            
+            <!-- Главы 16-19 -->
+            <article id="4" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 16-19</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Развязка и судьбы героев</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">После неудачной попытки спасти Машу, Дубровский собирает своих людей и объявляет, что распускает шайку. Он советует им разойтись и начать честную жизнь в разных губерниях. Сам же Дубровский исчезает.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Начинается расследование деятельности шайки Дубровского. Власти пытаются поймать разбойников, но безуспешно. Многие из бывших членов шайки действительно начинают новую жизнь, некоторые продолжают грабить самостоятельно, но уже без прежней организации.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Проходит время. Ходят слухи, что Дубровский уехал за границу. Некоторые утверждают, что видели его в Москве или Петербурге под чужим именем. Другие говорят, что он погиб в одной из стычек.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Маша продолжает жить с князем Верейским. Брак оказывается несчастливым: князь стар, эгоистичен, обращается с женой как с собственностью. Маша часто вспоминает Дубровского и свою несбывшуюся любовь. Троекуров со временем понимает, какую ошибку совершил, выдав дочь за нелюбимого человека, но исправить уже ничего не может.</div>
+            </article>
+            
+            <!-- Заключение -->
+            <article id="epilogue" class="chapter">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Заключение</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Основные темы и идеи романа</div>
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Роман «Дубровский» — это история о социальной несправедливости, благородной мести и несчастной любви. Пушкин показывает, как несправедливая судебная система и произвол сильных мира сего могут разрушить жизнь честных людей.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Владимир Дубровский — типичный романтический герой: благородный разбойник, мстящий за отца. Но его месть избирательна — он грабит только богатых и не трогает бедных. Любовь к Маше меняет его планы: ради нее он готов простить Троекурова, но судьба распоряжается иначе.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Маша Троекурова — жертва патриархальных устоев. Несмотря на любовь к Дубровскому, она не может ослушаться отца и нарушить церковную клятву. Ее трагедия в том, что она ставит долг выше личного счастья.</div>
+                
+                <div class="text" style="line-height: 1.8; font-size: 17px;">Роман остался незаконченным. Пушкин не дописал последние главы, поэтому судьба Дубровского остается открытой. Возможно, автор хотел показать, что в условиях социальной несправедливости счастливый конец невозможен.</div>
+            </article>
+        </section>
     </div>
-    <div id="text">
-     <div class="ztext">Подробный пересказ по частям</div>
+</main>
+
+<footer>
+    <div class="footer-icons-container">
+        <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="footer-icon-link" title="Следить за нами">
+            <svg class="footer-icon telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2,21l20-9L2,3V10l15,2L2,14Z"/>
+            </svg>
+        </a>
+        <a class="footer-icon-link" title="По вопросам" onclick="copyToClipboard('8 800 555 35 55')">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25453.png" alt="Телефон" class="footer-icon" />
+        </a>
+        <a class="footer-icon-link" title="По рекламе" onclick="copyToClipboard('privet@gmail.com')">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="footer-icon" />
+        </a>
+        <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="footer-icon-link" title="Поддержать нас">
+            <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Сбербанк" class="footer-icon" />
+        </a>
     </div>
- </main>
-</div> 
+</footer>
+
+<script>
+    // Функция для копирования в буфер обмена
+    function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showNotification('Скопировано: ' + text);
+                })
+                .catch(err => {
+                    fallbackCopyText(text);
+                });
+        } else {
+            fallbackCopyText(text);
+        }
+    }
+
+    function fallbackCopyText(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showNotification('Скопировано: ' + text);
+            } else {
+                showNotification('Не удалось скопировать текст');
+            }
+        } catch (err) {
+            showNotification('Ошибка при копировании: ' + err);
+        }
+        document.body.removeChild(textarea);
+    }
+
+    // Функция для показа уведомлений
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            z-index: 9999;
+            font-size: 16px;
+            text-align: center;
+            animation: fadeInOut 3s ease;
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+            style.remove();
+        }, 3000);
+    }
+    
+    // Добавляем эффект при наведении на ссылки содержания
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.link-text[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#d4edda';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                if (this.getAttribute('href') === '#ochom' || 
+                    this.getAttribute('href') === '#characters' || 
+                    this.getAttribute('href') === '#text') {
+                    this.style.backgroundColor = '#e9f5e9';
+                } else {
+                    this.style.backgroundColor = '#f0f0f0';
+                }
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Эффект для ссылок на персонажей
+        const characterLinks = document.querySelectorAll('.character-link');
+        characterLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#62904d';
+                this.style.color = 'white';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(98, 144, 77, 0.3)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.color = '#2c3e50';
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    });
+</script>
 </body>
 </html>
-<div class="text"></div>
