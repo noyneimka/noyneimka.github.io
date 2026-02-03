@@ -1,26 +1,303 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8" />
-<title>Преступление и наказание</title>
+<!DOCTYPE html>  
+<html lang="ru">  
+<head>  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+<title>Маленький принц - Антуан де Сент-Экзюпери</title>  
 <link rel="stylesheet" href="/css/main.css" />
-</head>
-<body>
+</head>  
+<body>  
 <header>
     <div class="logo-holder">
         <a href="/index.html" id="logo-link">
             <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
         </a>
-        <h1>Преступление и наказание</h1>
+        <h1>Маленький принц</h1>
+        <div class="header-spacer"></div>
     </div>
-</header>
-<div class="container">
- <main>
-  <div style="margin-top:50px; margin-bottom: 100px;">    
-    <p>Полное описание книги, отзывы, автор, и т.д.</p>
-    <a href="/books.html">Вернуться к списку книг</a>
-  </div>
- </main>
-</div> 
+</header> 
+
+<a href="/books.html" class="back-button-fixed">
+    <img src="https://i.ibb.co/k2M1GSJh/1.png" alt="Назад" />
+</a>
+
+<main class="container inner-page" style="margin-top: 80px;">
+    <div class="books-section">
+        <div class="rectangle" style="margin-bottom: 40px; background-color: #f8f8f8;">
+            <div class="content" style="width: 100%;">
+                <div class="ztextb" style="text-align: center; margin-bottom: 20px;">Содержание</div>
+                
+                <nav class="table-of-contents">
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                О чем произведение
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Персонажи
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Пересказ по главам
+                            </a>
+                            <div class="toc-chapters" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-left: 20px;">
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#1" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Главы 1-5</a>
+                                    <a href="#2" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Главы 6-10</a>
+                                    <a href="#3" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Главы 11-15</a>
+                                </div>
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#4" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Главы 16-21</a>
+                                    <a href="#epilogue" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Главы 22-27</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+        <section id="ochom" class="content-section" style="margin-bottom: 50px;">
+            <div class="rectangle" style="background-color: #f0f7f0; border-left: 5px solid #62904d;">
+                <div class="content">
+                    <div class="ztextb" style="color: #2c3e50; margin-bottom: 15px;">О чем произведение</div>
+                    <div class="text" style="line-height: 1.8; font-size: 17px;">Философская сказка о маленьком мальчике с далекой планеты, который путешествует по вселенной и встречает разных взрослых, каждый из которых олицетворяет определенные человеческие пороки. Через призму детского восприятия автор показывает, как взрослые часто теряют способность видеть главное: дружбу, любовь и красоту мира. Центральная мысль: «Мы в ответе за тех, кого приручили».</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="characters" class="content-section" style="margin-bottom: 50px;">
+            <div class="ztext" style="margin-bottom: 20px;">Персонажи</div>
+            <div class="rectangle" style="background-color: #f8f8f8; padding: 20px;">
+                <div class="characters-links" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+                    <a href="#character-0" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Маленький принц</a>
+                    <a href="#character-1" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Лётчик</a>
+                    <a href="#character-2" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Роза</a>
+                    <a href="#character-3" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Лис</a>
+                    <a href="#character-4" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Король</a>
+                    <a href="#character-5" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Честолюбец</a>
+                    <a href="#character-6" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Деловой человек</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="text" class="content-section">
+            <div class="ztext" style="margin-bottom: 30px; text-align: center;">Подробный пересказ по главам</div>
+            
+            <article id="1" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 1-5</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Встреча лётчика с Маленьким принцем</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Лётчик терпит аварию в пустыне Сахара. Пока он пытается починить самолёт, к нему подходит необычный мальчик — Маленький принц. Он просит нарисовать ему барашка. Лётчик, который в детстве хотел стать художником, но взрослые не поняли его рисунки, несколько раз пытается нарисовать барашка, но принцу всё не нравится. Наконец, лётчик рисует ящик и говорит, что барашек внутри.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7674.avif" alt="Маленький принц" class="icon" id="character-0" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Маленький принц</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Загадочный мальчик с астероида Б-612. Чистый, непосредственный, мудрый не по годам. Видит мир сердцем, а не глазами. Путешествует по планетам, чтобы понять, как устроен мир взрослых.</div>
+                    </div>
+                </div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7675.avif" alt="Лётчик" class="icon" id="character-1" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Лётчик (рассказчик)</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Взрослый, который сохранил детскую душу. Будучи ребёнком, он хотел стать художником, но взрослые не оценили его рисунки. Встреча с Маленьким принцем меняет его взгляд на жизнь.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Маленький принц рассказывает, что живёт на очень маленькой планете — астероиде Б-612. Его планета такая маленькая, что можно видеть закат несколько раз в день, просто передвинув стул. На планете есть три вулкана (два действующих и один потухший) и разные растения, среди которых особенно важна Роза.</div>
+            </article>
+            
+            <article id="2" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 6-10</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">История Розы и уход с планеты</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Маленький принц рассказывает о своей Розе. Однажды на его планете появился росток, из которого выросла прекрасная роза. Она была капризной, гордой и требовала постоянного ухода. Хотя принц любил её, он не понимал её капризов и чувствовал себя несчастным.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7676.avif" alt="Роза" class="icon" id="character-2" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Роза</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Прекрасный, но капризный цветок. Гордится своей красотой, требует внимания и заботы. Олицетворяет любовь, которая бывает сложной, но искренней. Для принца она единственная в мире.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Решив узнать мир, Маленький принц отправляется в путешествие. Перед уходом он наводит порядок на планете: прочищает вулканы, выпалывает баобабы (опасные деревья, которые могут разрушить маленькую планету) и прощается с Розой. Роза, которая раньше только жаловалась, признаётся, что любит его, и говорит, что была глупа. Она отпускает его.</div>
+            </article>
+            
+            <article id="3" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 11-15</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Посещение планет взрослых</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Маленький принц посещает шесть планет, на каждой живёт один взрослый, олицетворяющий человеческие пороки:</div>
+                
+                <div class="text" style="margin-bottom: 15px; line-height: 1.8; font-size: 17px; padding-left: 20px;">1. <strong>Король</strong> — живёт один на планете, считает, что правит всем, но на самом деле не имеет подданных. Олицетворяет тщеславие власти.</div>
+                <div class="text" style="margin-bottom: 15px; line-height: 1.8; font-size: 17px; padding-left: 20px;">2. <strong>Честолюбец</strong> — хочет, чтобы все им восхищались, но на планете кроме него никого нет. Символ пустого тщеславия.</div>
+                <div class="text" style="margin-bottom: 15px; line-height: 1.8; font-size: 17px; padding-left: 20px;">3. <strong>Пьяница</strong> — пьёт, чтобы забыть, что ему стыдно пить. Олицетворение порочного круга и бегства от проблем.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/7680.avif" alt="Лис" class="icon" id="character-3" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Лис</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Мудрое существо, которое учит принца важным истинам. Объясняет, что значит «приручить», говорит: «Мы в ответе за тех, кого приручили». Помогает понять чувства к Розе.</div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="4" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 16-21</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Встреча с Лисом и важные уроки</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">На Земле Маленький принц попадает в сад с пятью тысячами роз. Он в отчаянии: его Роза говорила, что она единственная в мире, а здесь их тысячи. В этот момент появляется Лис.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Лис просит приручить его и объясняет: «Приручить — значит создать узы». Он говорит, что для Лиса принц будет единственным в мире, а для принца Лис будет единственным лисом. Лис учит: «Зорко одно лишь сердце. Самого главного глазами не увидишь» и «Мы в ответе за тех, кого приручили».</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Благодаря Лису принц понимает, что его Роза действительно уникальна, потому что он приручил её, ухаживал за ней, слушал её капризы. Он осознаёт: «Вы красивые, но пустые... ради вас не захочешь умереть» — обращается он к садовым розам.</div>
+            </article>
+            
+            <article id="epilogue" class="chapter">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Главы 22-27</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Возвращение и прощание</div>
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Маленький принц решает вернуться к своей Розе. Он понимает, что оставил её одну и она нуждается в нём. Но его тело слишком тяжёлое, чтобы добраться до своей планеты. Он рассказывает лётчику, что вернётся через укус змеи, который освободит его душу.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">На восьмой день после аварии лётчик заканчивает ремонт самолёта. Маленький принц прощается с ним. Змея кусает принца, и он тихо падает на песок. Утром лётчик не находит его тела — Маленький принц вернулся к своей планете.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Лётчик всегда помнит принца. Когда он смотрит на звёзды, то слышит смех Маленького принца. Он просит читателей: если они окажутся в Африке и встретят мальчика с золотыми волосами, который не отвечает на вопросы, — обязательно напишут ему, что принц вернулся.</div>
+                
+                <div class="text" style="line-height: 1.8; font-size: 17px;">Книга заканчивается рисунком пустыни, где произошла встреча. Автор подписывает: «Здесь был Маленький принц».</div>
+            </article>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-icons-container">
+        <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="footer-icon-link" title="Следить за нами">
+            <svg class="footer-icon telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2,21l20-9L2,3V10l15,2L2,14Z"/>
+            </svg>
+        </a>
+        <a class="footer-icon-link" title="По вопросам" onclick="copyToClipboard('8 800 555 35 55')">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25453.png" alt="Телефон" class="footer-icon" />
+        </a>
+        <a class="footer-icon-link" title="По рекламе" onclick="copyToClipboard('privet@gmail.com')">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="footer-icon" />
+        </a>
+        <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="footer-icon-link" title="Поддержать нас">
+            <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Сбербанк" class="footer-icon" />
+        </a>
+    </div>
+</footer>
+
+<script>
+    function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showNotification('Скопировано: ' + text);
+                })
+                .catch(err => {
+                    fallbackCopyText(text);
+                });
+        } else {
+            fallbackCopyText(text);
+        }
+    }
+
+    function fallbackCopyText(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showNotification('Скопировано: ' + text);
+            } else {
+                showNotification('Не удалось скопировать текст');
+            }
+        } catch (err) {
+            showNotification('Ошибка при копировании: ' + err);
+        }
+        document.body.removeChild(textarea);
+    }
+
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            z-index: 9999;
+            font-size: 16px;
+            text-align: center;
+            animation: fadeInOut 3s ease;
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+            style.remove();
+        }, 3000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.link-text[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#d4edda';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                if (this.getAttribute('href') === '#ochom' || 
+                    this.getAttribute('href') === '#characters' || 
+                    this.getAttribute('href') === '#text') {
+                    this.style.backgroundColor = '#e9f5e9';
+                } else {
+                    this.style.backgroundColor = '#f0f0f0';
+                }
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        const characterLinks = document.querySelectorAll('.character-link');
+        characterLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#62904d';
+                this.style.color = 'white';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(98, 144, 77, 0.3)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.color = '#2c3e50';
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    });
+</script>
 </body>
 </html>
