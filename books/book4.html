@@ -1,26 +1,299 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8" />
-<title>Преступление и наказание</title>
+<!DOCTYPE html>  
+<html lang="ru">  
+<head>  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+<title>Мастер и Маргарита - Михаил Булгаков</title>  
 <link rel="stylesheet" href="/css/main.css" />
-</head>
-<body>
+</head>  
+<body>  
 <header>
     <div class="logo-holder">
         <a href="/index.html" id="logo-link">
             <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
         </a>
-        <h1>Преступление и наказание</h1>
+        <h1>Мастер и Маргарита</h1>
+        <div class="header-spacer"></div>
     </div>
-</header>
-<div class="container">
- <main>
-  <div style="margin-top:50px; margin-bottom: 100px;">    
-    <p>Полное описание книги, отзывы, автор, и т.д.</p>
-    <a href="/books.html">Вернуться к списку книг</a>
-  </div>
- </main>
-</div> 
+</header> 
+
+<a href="/books.html" class="back-button-fixed">
+    <img src="https://i.ibb.co/k2M1GSJh/1.png" alt="Назад" />
+</a>
+
+<main class="container inner-page" style="margin-top: 80px;">
+    <div class="books-section">
+        <div class="rectangle" style="margin-bottom: 40px; background-color: #f8f8f8;">
+            <div class="content" style="width: 100%;">
+                <div class="ztextb" style="text-align: center; margin-bottom: 20px;">Содержание</div>
+                
+                <nav class="table-of-contents">
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="toc-category">
+                            <a href="#ochom" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                О чем произведение
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#characters" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Персонажи
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Пересказ по частям
+                            </a>
+                            <div class="toc-chapters" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-left: 20px;">
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#1" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Часть 1 (1-10)</a>
+                                    <a href="#2" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Часть 1 (11-18)</a>
+                                    <a href="#3" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Часть 2 (19-24)</a>
+                                </div>
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#4" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Часть 2 (25-32)</a>
+                                    <a href="#epilogue" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Эпилог</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+        <section id="ochom" class="content-section" style="margin-bottom: 50px;">
+            <div class="rectangle" style="background-color: #f0f7f0; border-left: 5px solid #62904d;">
+                <div class="content">
+                    <div class="ztextb" style="color: #2c3e50; margin-bottom: 15px;">О чем произведение</div>
+                    <div class="text" style="line-height: 1.8; font-size: 17px;">Роман состоит из двух переплетающихся сюжетных линий: история о дьяволе (Воланде) и его свите, посещающих Москву 1930-х годов, и роман о Понтии Пилате, написанный Мастером. Произведение поднимает вечные темы добра и зла, истины и лжи, любви и предательства, творчества и власти. Это философская притча о том, что «рукописи не горят» и любовь сильнее смерти.</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="characters" class="content-section" style="margin-bottom: 50px;">
+            <div class="ztext" style="margin-bottom: 20px;">Персонажи</div>
+            <div class="rectangle" style="background-color: #f8f8f8; padding: 20px;">
+                <div class="characters-links" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+                    <a href="#character-0" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Воланд</a>
+                    <a href="#character-1" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Мастер</a>
+                    <a href="#character-2" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Маргарита</a>
+                    <a href="#character-3" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Понтий Пилат</a>
+                    <a href="#character-4" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Иешуа Га-Ноцри</a>
+                    <a href="#character-5" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Иван Бездомный</a>
+                    <a href="#character-6" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Коровьев-Фагот</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="text" class="content-section">
+            <div class="ztext" style="margin-bottom: 30px; text-align: center;">Подробный пересказ по частям</div>
+            
+            <article id="1" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Часть 1 (Главы 1-10)</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Появление Воланда в Москве</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Весной в Москве появляется таинственный иностранец Воланд (дьявол) со своей свитой: Коровьевым-Фаготом, котом Бегемотом, Азазелло и Геллой. На Патриарших прудах он встречается с председателем МАССОЛИТа Берлиозом и поэтом Иваном Бездомным. Воланд предсказывает Берлиозу смерть под колесами трамвая, что вскоре и происходит.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/9565.avif" alt="Воланд" class="icon" id="character-0" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Воланд</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Дьявол, посетивший Москву. Не творит зла ради зла, а карает грешников и восстанавливает справедливость. Мудрый, ироничный, всевидящий. Свита выполняет его волю.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Иван Бездомный, потрясенный смертью Берлиоза и разговором с Воландом (который утверждал, что Иисус существовал), пытается поймать «иностранного шпиона». Он попадает в психиатрическую клинику, где знакомится с Мастером.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/9566.avif" alt="Мастер" class="icon" id="character-1" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Мастер</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Талантливый писатель, автор романа о Понтии Пилате. Не выдержав травли критиков, сжигает рукопись и попадает в психиатрическую клинику. Любит Маргариту. Обретает покой благодаря Воланду.</div>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="2" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Часть 1 (Главы 11-18)</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Роман о Понтии Пилате</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Мастер рассказывает Ивану историю своего романа. Действие происходит в Ершалаиме (Иерусалиме) во время правления прокуратора Понтия Пилата. К Пилату приводят бродячего философа Иешуа Га-Ноцри, обвиненного в подстрекательстве к разрушению храма.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/9569.avif" alt="Понтий Пилат" class="icon" id="character-3" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Понтий Пилат</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Прокуратор Иудеи. Могущественный, но одинокий человек. Понимает невиновность Иешуа, но из страха перед Каифой утверждает смертный приговор. После казни мучается угрызениями совести 2000 лет.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Иешуа поражает Пилата своей искренностью и бесстрашием. Он говорит, что «все люди добрые» и что трусость — самый страшный порок. Пилат хочет спасти философа, но первосвященник Каифа настаивает на казни. Из страха перед доносом Пилат утверждает смертный приговор.</div>
+            </article>
+            
+            <article id="3" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Часть 2 (Главы 19-24)</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Маргарита становится ведьмой</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Маргарита, любовница Мастера, тоскует по нему (она думает, что он умер). Азазелло передает ей волшебный крем и приглашение от Воланда. Намазавшись кремом, Маргарита превращается в ведьму и летит на бал Сатаны.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://briefly.ru/static/cache/characters/64/9567.avif" alt="Маргарита" class="icon" id="character-2" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Маргарита Николаевна</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Красивая, страстная женщина, жена богатого специалиста, но несчастная в браке. Встретив Мастера, находит смысл жизни. Ради любви готова на всё, даже стать ведьмой. Верная и самоотверженная.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">На балу Маргарита выступает в роли королевы. Она приветствует тысячи грешников, среди которых убийцы, отравители, предатели. Несмотря на усталость, она достойно выполняет свою роль. После бала Воланд предлагает исполнить её желание. Маргарита просит вернуть Мастера.</div>
+            </article>
+            
+            <article id="4" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Часть 2 (Главы 25-32)</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Воссоединение и финал</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Мастер возвращается к Маргарите. Воланд возвращает сожженную рукопись романа со словами «рукописи не горят». Мастер заканчивает роман: после казни Иешуа его ученик Левий Матвий снимает тело с креста. Пилат мучается угрызениями совести.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Воланд и его свита покидают Москву, устроив пожар в квартире и превратив ненавистного критика Латунского в пустое платье. Перед отлетом Левий Матвий передает Воланду просьбу Иешуа дать Мастеру покой.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Мастер и Маргарита умирают (их отравляет Азазелло) и обретают вечный покой в «последнем приюте» — маленьком домике с вишневым садом. Пилат, мучившийся 2000 лет, прощен и идет по лунной дорожке вместе с Иешуа.</div>
+            </article>
+            
+            <article id="epilogue" class="chapter">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Эпилог</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Последствия и выводы</div>
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">После отъезда Воланда в Москве начинается расследование странных событий. Многих участников отправляют в психиатрические клиники. Иван Бездомный становится историком и больше не пишет стихов. Каждый год весной он видит один и тот же сон: Понтий Пилат идет по лунной дорожке с Иешуа.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Основные идеи романа: любовь сильнее смерти, трусость — самый страшный порок, «рукописи не горят» (истинное искусство вечно). Воланд не творит зло, а лишь обнажает уже существующее в людях. Роман соединяет библейские мотивы, сатиру на советскую действительность и философские размышления.</div>
+                
+                <div class="text" style="line-height: 1.8; font-size: 17px;">Булгаков показывает, что каждый получает по заслугам: грешники наказаны, истинные любовники обретают покой, а трусы (как Пилат) мучаются вечно, пока не получат прощение.</div>
+            </article>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-icons-container">
+        <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="footer-icon-link" title="Следить за нами">
+            <svg class="footer-icon telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2,21l20-9L2,3V10l15,2L2,14Z"/>
+            </svg>
+        </a>
+        <a class="footer-icon-link" title="По вопросам" onclick="copyToClipboard('8 800 555 35 55')">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25453.png" alt="Телефон" class="footer-icon" />
+        </a>
+        <a class="footer-icon-link" title="По рекламе" onclick="copyToClipboard('privet@gmail.com')">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="footer-icon" />
+        </a>
+        <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="footer-icon-link" title="Поддержать нас">
+            <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Сбербанк" class="footer-icon" />
+        </a>
+    </div>
+</footer>
+
+<script>
+    function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showNotification('Скопировано: ' + text);
+                })
+                .catch(err => {
+                    fallbackCopyText(text);
+                });
+        } else {
+            fallbackCopyText(text);
+        }
+    }
+
+    function fallbackCopyText(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showNotification('Скопировано: ' + text);
+            } else {
+                showNotification('Не удалось скопировать текст');
+            }
+        } catch (err) {
+            showNotification('Ошибка при копировании: ' + err);
+        }
+        document.body.removeChild(textarea);
+    }
+
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            z-index: 9999;
+            font-size: 16px;
+            text-align: center;
+            animation: fadeInOut 3s ease;
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+            style.remove();
+        }, 3000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.link-text[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#d4edda';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                if (this.getAttribute('href') === '#ochom' || 
+                    this.getAttribute('href') === '#characters' || 
+                    this.getAttribute('href') === '#text') {
+                    this.style.backgroundColor = '#e9f5e9';
+                } else {
+                    this.style.backgroundColor = '#f0f0f0';
+                }
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        const characterLinks = document.querySelectorAll('.character-link');
+        characterLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#62904d';
+                this.style.color = 'white';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(98, 144, 77, 0.3)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.color = '#2c3e50';
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    });
+</script>
 </body>
 </html>
