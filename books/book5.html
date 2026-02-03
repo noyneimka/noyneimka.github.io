@@ -1,26 +1,301 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8" />
-<title>Преступление и наказание</title>
+<!DOCTYPE html>  
+<html lang="ru">  
+<head>  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+<title>Алые паруса - Александр Грин</title>  
 <link rel="stylesheet" href="/css/main.css" />
-</head>
-<body>
+</head>  
+<body>  
 <header>
     <div class="logo-holder">
         <a href="/index.html" id="logo-link">
             <img src="https://i.ibb.co/zTKSMdst/image.png" alt="logo" />
         </a>
-        <h1>Преступление и наказание</h1>
+        <h1>Алые паруса</h1>
+        <div class="header-spacer"></div>
     </div>
-</header>
-<div class="container">
- <main>
-  <div style="margin-top:50px; margin-bottom: 100px;">    
-    <p>Полное описание книги, отзывы, автор, и т.д.</p>
-    <a href="/books.html">Вернуться к списку книг</a>
-  </div>
- </main>
-</div> 
+</header> 
+
+<a href="/books.html" class="back-button-fixed">
+    <img src="https://i.ibb.co/k2M1GSJh/1.png" alt="Назад" />
+</a>
+
+<main class="container inner-page" style="margin-top: 80px;">
+    <div class="books-section">
+        <div class="rectangle" style="margin-bottom: 40px; background-color: #f8f8f8;">
+            <div class="content" style="width: 100%;">
+                <div class="ztextb" style="text-align: center; margin-bottom: 20px;">Содержание</div>
+                
+                <nav class="table-of-contents">
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="toc-category">
+                            <a href="#ochom" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                О чем произведение
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#characters" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Персонажи
+                            </a>
+                        </div>
+                        <div class="toc-category">
+                            <a href="#text" class="link-text" style="font-size: 18px; font-weight: bold; color: #2c3e50; text-decoration: none; padding: 8px 15px; background-color: #e9f5e9; border-radius: 6px; transition: all 0.3s;">
+                                Пересказ по главам
+                            </a>
+                            <div class="toc-chapters" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-left: 20px;">
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#1" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Пророчество</a>
+                                    <a href="#2" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Детство Ассоль</a>
+                                    <a href="#3" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Юность Грея</a>
+                                </div>
+                                <div class="chapter-column" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a href="#4" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Встреча</a>
+                                    <a href="#5" class="link-text" style="padding: 6px 12px; background-color: #f0f0f0; border-radius: 4px;">Исполнение мечты</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+        <section id="ochom" class="content-section" style="margin-bottom: 50px;">
+            <div class="rectangle" style="background-color: #f0f7f0; border-left: 5px solid #62904d;">
+                <div class="content">
+                    <div class="ztextb" style="color: #2c3e50; margin-bottom: 15px;">О чем произведение</div>
+                    <div class="text" style="line-height: 1.8; font-size: 17px;">Поэтическая повесть-феерия о силе мечты, веры и любви. История девочки Ассоль, которой в детстве сказали, что за ней придет принц на корабле с алыми парусами. Несмотря на насмешки окружающих, Ассоль верит в предсказание. И капитан Артур Грэй, услышав об этой легенде, решает сделать мечту девушки явью. Произведение утверждает, что чудеса можно творить своими руками для тех, кто в них верит.</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="characters" class="content-section" style="margin-bottom: 50px;">
+            <div class="ztext" style="margin-bottom: 20px;">Персонажи</div>
+            <div class="rectangle" style="background-color: #f8f8f8; padding: 20px;">
+                <div class="characters-links" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+                    <a href="#character-0" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Ассоль</a>
+                    <a href="#character-1" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Артур Грэй</a>
+                    <a href="#character-2" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Лонгрен</a>
+                    <a href="#character-3" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Эгль</a>
+                    <a href="#character-4" class="character-link" style="padding: 10px 16px; background-color: #e9ecef; border-radius: 8px; text-decoration: none; color: #2c3e50; font-weight: 500; transition: all 0.3s; border: 1px solid #dee2e6;">Меннерс</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="text" class="content-section">
+            <div class="ztext" style="margin-bottom: 30px; text-align: center;">Подробный пересказ</div>
+            
+            <article id="1" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Пророчество</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">История Лонгрена и рождение Ассоль</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Моряк Лонгрен живет в рыбацкой деревне Каперна со своей дочерью Ассоль. Его жена Мэри умерла, когда Ассоль было всего 8 месяцев. Трагедия произошла из-за равнодушия лавочника Меннерса: Мэри, оставшись без денег, пошла в город заложить обручальное кольцо, попала в бурю и заболела. Меннерс мог помочь, но отказался дать ей денег в долг.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://i.ibb.co/BH63Xfhf/image.jpg" alt="Ассоль" class="icon" id="character-0" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Ассоль</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Дочь Лонгрена. Добрая, мечтательная, чистая душой девушка. С детства верит в предсказание о принце на корабле с алыми парусами. Несмотря на насмешки, сохраняет веру в чудо. Встретив Грэя, обретает счастье.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Через несколько лет во время шторма Меннерс тонул, и Лонгрен, наблюдая за ним с берега, не помог ему, сказав: «Я так же смотрел, как умирала Мэри». С тех пор жители Каперны стали избегать Лонгрена и его дочь.</div>
+            </article>
+            
+            <article id="2" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Детство Ассоль</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Предсказание собирателя песен</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Когда Ассоль было 8 лет, отец отправил её в город продать игрушки (он зарабатывал изготовлением моделей кораблей). В лесу девочка встретила старика Эгля, собирателя легенд и песен. Увидев игрушечную яхту с алым парусом, которую несла Ассоль, Эгль сказал, что когда она вырастет, за ней приедет принц на таком же корабле с алыми парусами и увезёт её в далёкую страну.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://i.ibb.co/BH63Xfhf/image.jpg" alt="Артур Грэй" class="icon" id="character-1" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Артур Грэй</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Капитан корабля «Секрет». Родился в богатой семье, но с детства мечтал о море. Решительный, романтичный, благородный. Услышав легенду об Ассоль, решает исполнить её мечту. Становится её принцем.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Ассоль рассказала отцу о встрече, но их разговор подслушал нищий и разнёс слух по деревне. С тех пор Ассоль стали считать «тронутой», а дети дразнили её: «Ассоль! Красные паруса смотрят!» Но девочка продолжала верить в предсказание.</div>
+            </article>
+            
+            <article id="3" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Юность Грэя</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Становление капитана</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Артур Грэй родился в богатой аристократической семье. С детства его манило море. В 15 лет он сбежал из дома и поступил юнгой на шхуну «Ансельм». Капитан Гоп, видя в мальчике задатки настоящего моряка, обучал его всему. К 20 годам Грэй стал капитаном собственного корабля «Секрет».</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://i.ibb.co/BH63Xfhf/image.jpg" alt="Лонгрен" class="icon" id="character-2" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Лонгрен</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Отец Ассоль, бывший моряк. После смерти жены оставил море и стал делать игрушки. Суровый, немногословный, но бесконечно любит дочь. Не простил Меннерса и стал изгоем в деревне.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Грэй был романтиком: он мог потратить годовой заработок на лечение матроса, купить для команды лучшие продукты. Однажды в портовой таверне он услышал рассказ угольщика о странной девушке из Каперны, которая ждёт корабль с алыми парусами.</div>
+            </article>
+            
+            <article id="4" class="chapter" style="margin-bottom: 60px; padding-bottom: 40px; border-bottom: 2px dashed #ddd;">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Встреча</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Грэй видит Ассоль</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Грэй решил посмотреть на «полоумную» девушку. На своей лодке он приплыл к берегу Каперны и увидел спящую Ассоль. Она поразила его своей красотой и нежностью. На её пальце Грэй заметил старое кольцо и осторожно надел своё.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Проснувшись, Ассоль увидела кольцо и удивилась. В деревне она встретила угольщика, который рассказал ей о встрече с капитаном в таверне. Ассоль смутно поняла, что этот капитан и есть тот, кто подарил кольцо.</div>
+                
+                <div class="rectangle character-info" style="background-color: #f9f9f9; border-left: 4px solid #62904d; margin-bottom: 25px;">
+                    <img src="https://i.ibb.co/BH63Xfhf/image.jpg" alt="Эгль" class="icon" id="character-3" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="content">
+                        <div class="ztextb" style="color: #2c3e50; margin-bottom: 10px;">Эгль (собиратель легенд)</div>
+                        <div class="text" style="color: #555; line-height: 1.6;">Старый странник, собирающий песни и легенды. Добрый, мудрый, с богатым воображением. Его предсказание определило судьбу Ассоль. Символизирует веру в чудеса.</div>
+                    </div>
+                </div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Грэй отправился в лавку, чтобы узнать об Ассоль больше. Хозяин лавки, сын Меннерса, рассказал историю Лонгрена и насмешливо — об ожидании алых парусов. Грэй понял, что эта девушка — именно та, которую он искал.</div>
+            </article>
+            
+            <article id="5" class="chapter">
+                <div class="ytext" style="font-size: 22px; color: #62904d; margin-bottom: 15px;">Исполнение мечты</div>
+                <div class="ztext" style="font-size: 20px; margin-bottom: 25px; color: #2c3e50;">Алые паруса прибывают</div>
+                <div class="text" style="margin-bottom: 25px; line-height: 1.8; font-size: 17px;">Грэй купил 2000 метров алого шёлка, чтобы сделать паруса для своего корабля. Он собрал музыкантов и приготовил всё для встречи. Утром «Секрет» с алыми парусами вошёл в гавань Каперны. Жители деревни в изумлении сбежались на берег.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Ассоль, увидев алые паруса, сначала не поверила своим глазам, потом бросилась к морю. От корабля отчалила лодка, в которой стоял Грэй. Он протянул руку Ассоль: «Я пришёл за тобой. Здравствуй, Ассоль!» Девушка ответила: «Совершенно такая».</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Грэй забрал Ассоль и Лонгрена на свой корабль. Перед отплытием он сказал собравшимся: «Я делаю чудо своими руками для той, которая так же одиноко ждёт его, как ждали вы... но вы ждали иного». Корабль с алыми парусами уплыл в открытое море под звуки прекрасной музыки.</div>
+                
+                <div class="text" style="margin-bottom: 20px; line-height: 1.8; font-size: 17px;">Жители Каперны долго стояли на берегу, поражённые увиденным. А на корабле Ассоль и Грэй говорили о любви и счастье. Грэй сказал: «Теперь ты будешь мной разбужена каждое утро, как будил меня сегодня утром твой смех».</div>
+                
+                <div class="text" style="line-height: 1.8; font-size: 17px;">Повесть заканчивается словами: «Секрет» ушёл в открытое море, увозя всю команду, которая навсегда связала свою жизнь с капитаном и его избранницей. А в Каперне ещё долго рассказывали историю о девушке, которая дождалась своего принца на корабле с алыми парусами.</div>
+            </article>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-icons-container">
+        <a href="https://t.me/+mVQeuA7PF6g2ZDdi" class="footer-icon-link" title="Следить за нами">
+            <svg class="footer-icon telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2,21l20-9L2,3V10l15,2L2,14Z"/>
+            </svg>
+        </a>
+        <a class="footer-icon-link" title="По вопросам" onclick="copyToClipboard('8 800 555 35 55')">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25453.png" alt="Телефон" class="footer-icon" />
+        </a>
+        <a class="footer-icon-link" title="По рекламе" onclick="copyToClipboard('privet@gmail.com')">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" class="footer-icon" />
+        </a>
+        <a href="https://www.sberbank.com/sms/pbpn?requisiteNumber=79195236425" class="footer-icon-link" title="Поддержать нас">
+            <img src="https://free-png.ru/wp-content/uploads/2020/09/icon_sber-01.png" alt="Сбербанк" class="footer-icon" />
+        </a>
+    </div>
+</footer>
+
+<script>
+    function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showNotification('Скопировано: ' + text);
+                })
+                .catch(err => {
+                    fallbackCopyText(text);
+                });
+        } else {
+            fallbackCopyText(text);
+        }
+    }
+
+    function fallbackCopyText(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showNotification('Скопировано: ' + text);
+            } else {
+                showNotification('Не удалось скопировать текст');
+            }
+        } catch (err) {
+            showNotification('Ошибка при копировании: ' + err);
+        }
+        document.body.removeChild(textarea);
+    }
+
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            z-index: 9999;
+            font-size: 16px;
+            text-align: center;
+            animation: fadeInOut 3s ease;
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+            style.remove();
+        }, 3000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.link-text[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#d4edda';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                if (this.getAttribute('href') === '#ochom' || 
+                    this.getAttribute('href') === '#characters' || 
+                    this.getAttribute('href') === '#text') {
+                    this.style.backgroundColor = '#e9f5e9';
+                } else {
+                    this.style.backgroundColor = '#f0f0f0';
+                }
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        const characterLinks = document.querySelectorAll('.character-link');
+        characterLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#62904d';
+                this.style.color = 'white';
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 8px rgba(98, 144, 77, 0.3)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '#e9ecef';
+                this.style.color = '#2c3e50';
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    });
+</script>
 </body>
 </html>
