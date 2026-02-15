@@ -17,7 +17,7 @@
     </div>
 </header> 
 
-<a href="/books.html" class="back-button-fixed">
+<a href="javascript:void(0);" class="back-button-fixed" onclick="handleBackButton()">
     <img src="https://i.ibb.co/k2M1GSJh/1.png" alt="Назад" />
 </a>
 
@@ -295,6 +295,28 @@
             });
         });
     });
+function handleBackButton() {
+    const referrer = document.referrer;
+    if (referrer) {
+        try {
+            const referrerUrl = new URL(referrer);
+            const currentUrl = new URL(window.location.href);
+            // Проверяем, что referrer с того же сайта (чтобы не уйти на чужой)
+            if (referrerUrl.origin === currentUrl.origin) {
+                const path = referrerUrl.pathname;
+                // Если в пути есть "avtor" или "nov" – возвращаемся обратно
+                if (path.includes('avtor') || path.includes('nov')) {
+                    window.location.href = referrer;
+                    return;
+                }
+            }
+        } catch (e) {
+            // Если referrer некорректный – игнорируем и переходим в каталог
+        }
+    }
+    // Во всех остальных случаях – в каталог книг
+    window.location.href = '/books.html';
+}
 </script>
 </body>
 </html>
