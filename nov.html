@@ -3,8 +3,56 @@
 <head>  
 <meta charset="UTF-8" />  
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-<title>Новинки</title>  
+<title>Обзоры книг</title>  
 <link rel="stylesheet" href="/css/main.css" />
+<style>
+/* Дополнительные стили для исправления отображения обложек */
+.icon {
+    width: 130px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.rectangle {
+    align-items: stretch;
+}
+
+.rectangle .content {
+    flex: 1;
+    min-width: 0; /* Для корректного обрезания текста */
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .icon {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .icon {
+        width: 80px;
+        height: 120px;
+    }
+}
+
+/* Выравнивание текста в описаниях */
+.rectangle .text {
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Выравнивание по высоте для всех блоков */
+.books-container .rectangle {
+    min-height: 220px; /* Минимальная высота для всех блоков */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+}
+</style>
 </head>  
 <body>  
 <header>
@@ -23,49 +71,61 @@
 </a>
 
 <main class="container inner-page">
-    <!-- Секция "Новинки за Июль" -->  
+    <!-- Секция "Топ популярных книг" -->  
     <div class="books-section">  
-        <h2 class="ztext">За Июль</h2>  
+        <h2 class="ztext">По популярности</h2>       
         <div class="books-container">  
             <!-- Блоки книг -->  
+             <div class="rectangle">
+                <a href="books/book5.html" style="display: block;">
+                    <img src="https://i.ibb.co/btqwT8L/alye-parusa-x-768.jpg" alt="Алые паруса" class="icon" />
+                </a>
+                <div class="content">
+                    <div class="ztextb">Алые паруса</div>
+                    <a href="avtor/avtor5.html" class="ytext">Александр Грин</a>
+                    <div class="text">Поэтическая повесть-феерия о силе мечты, веры и любви. История девочки Ассоль, которой в детстве сказали, что за ней придет принц на корабле с алыми парусами. Несмотря на насмешки окружающих, Ассоль верит в предсказание. И капитан Артур Грэй, услышав об этой легенде, решает сделать мечту девушки явью. Произведение утверждает, что чудеса можно творить своими руками для тех, кто в них верит.</div>
+                </div>
+            </div>
+             <div class="rectangle">
+                <a href="books/book2.html" style="display: block;">
+                    <img src="https://i.ibb.co/BH63Xfhf/image.jpg" alt="Дубровский" class="icon" />
+                </a>
+                <div class="content">
+                    <div class="ztextb">Дубровский</div>
+                    <a href="avtor/avtor2.html" class="ytext">А.С. Пушкин</a>
+                    <div class="text">«Дубровский» — незаконченный роман Александра Пушкина, повествующий о молодом дворянине Владимире Дубровском, который становится благородным разбойником после того, как его отец умирает из-за несправедливости богатого соседа Троекурова. Владимир пытается отомстить за отца, но влюбляется в дочь своего врага — Машу Троекурову. Роман затрагивает темы социальной несправедливости, чести, мести и любви.</div>
+                </div>
+            </div>
+            
             <div class="rectangle">
-                <a href="books/book1.html"><img src="https://i.ibb.co/7tScgQz9/image.jpg" alt="Преступление и наказание" class="icon" /></a>
+                <a href="books/book1.html" style="display: block;">
+                    <img src="https://i.ibb.co/7tScgQz9/image.jpg" alt="Преступление и наказание" class="icon" />
+                </a>
                 <div class="content">
                     <div class="ztextb">Преступление и наказание</div>
-                    <a href="avtor/avtor1.html" class="ytext">Федор Достоевский</a>
+                    <a href="avtor/avtor1.html" class="ytext">Ф.М. Достоевский</a>
                     <div class="text">«Преступление и наказание» Достоевского – психологический роман с глубоким философским подтекстом, изучаемый в школе, но требующий переосмысления в зрелом возрасте. Это не просто история об убийстве, а срез общества, отражение борьбы добра и зла, свободы и необходимости. В основе сюжета – реальная история об интеллектуале-убийце, утверждавшем, что ответственность за его преступление несет общество.</div>
                 </div>
             </div>
-            
             <div class="rectangle">
-                <a href="books/book2.html"><img src="https://i.ibb.co/xK4Bv9Mv/image.png" alt="Книга 2" class="icon" /></a>
+                <a href="books/book3.html" style="display: block;">
+                    <img src="https://i.ibb.co/W42Qx1dB/7328670802.jpg" alt="Маленький принц" class="icon" />
+                </a>
                 <div class="content">
-                    <div class="ztextb">Книга 2: Тестовая книга 2</div>
-                    <div class="text">Описание книги 2. Это краткое описание.</div>
+                    <div class="ztextb">Маленький принц</div>
+                    <a href="avtor/avtor3.html" class="ytext">Антуан де Сент-Экзюпери</a>
+                    <div class="text">Философская сказка о маленьком мальчике с далекой планеты, который путешествует по вселенной и встречает разных взрослых, каждый из которых олицетворяет определенные человеческие пороки. Через призму детского восприятия автор показывает, как взрослые часто теряют способность видеть главное: дружбу, любовь и красоту мира. Центральная мысль: «Мы в ответе за тех, кого приручили».</div>
                 </div>
             </div>
             
             <div class="rectangle">
-                <a href="books/book3.html"><img src="https://i.ibb.co/xK4Bv9Mv/image.png" alt="Книга 3" class="icon" /></a>
+                <a href="books/book4.html" style="display: block;">
+                    <img src="https://allwebs.ru/images/2026/02/15/5e7c7f21949a8f6c344f791350640859.png" alt="Мастер и Маргарита" class="icon" />
+                </a>
                 <div class="content">
-                    <div class="ztextb">Книга 3: Тестовая книга 3</div>
-                    <div class="text">Описание книги 3. Это краткое описание.</div>
-                </div>
-            </div>
-            
-            <div class="rectangle">
-                <a href="books/book4.html"><img src="https://i.ibb.co/xK4Bv9Mv/image.png" alt="Книга 4" class="icon" /></a>
-                <div class="content">
-                    <div class="ztextb">Книга 4: Тестовая книга 4</div>
-                    <div class="text">Описание книги 4. Это краткое описание.</div>
-                </div>
-            </div>
-            
-            <div class="rectangle">
-                <a href="books/book5.html"><img src="https://i.ibb.co/xK4Bv9Mv/image.png" alt="Книга 5" class="icon" /></a>
-                <div class="content">
-                    <div class="ztextb">Книга 5: Тестовая книга 5</div>
-                    <div class="text">Описание книги 5. Это краткое описание.</div>
+                    <div class="ztextb">Мастер и Маргарита</div>
+                    <a href="avtor/avtor4.html" class="ytext">Михаил Булгаков</a>
+                    <div class="text">Роман состоит из двух переплетающихся сюжетных линий: история о дьяволе (Воланде) и его свите, посещающих Москву 1930-х годов, и роман о Понтии Пилате, написанный Мастером. Произведение поднимает вечные темы добра и зла, истины и лжи, любви и предательства, творчества и власти. Это философская притча о том, что «рукописи не горят» и любовь сильнее смерти.</div>
                 </div>
             </div>
         </div>  
